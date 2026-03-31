@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visser & De Vries Advocaten N.V. | IT-recht & Privacyrecht Amsterdam</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -69,6 +71,7 @@
         .nav-bar {
             border-top: 1px solid rgba(255,255,255,0.1);
         }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
         .nav-bar ul {
             list-style: none;
             display: flex;
@@ -119,10 +122,14 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; right: 0;
-            width: 45%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(139,115,64,0.08) 0%, transparent 60%);
+            top: 50%; right: 5%;
+            width: 320px;
+            height: 380px;
+            transform: translateY(-50%);
+            background: url('logo-watermark.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.04;
+            pointer-events: none;
         }
         .hero h1 {
             color: #fff;
@@ -197,6 +204,19 @@
         }
 
         /* ── KANTOOR ── */
+        #kantoor {
+            position: relative;
+        }
+        #kantoor::after {
+            content: '';
+            position: absolute;
+            bottom: -30px; left: -60px;
+            width: 240px; height: 280px;
+            background: url('logo-watermark.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.025;
+            pointer-events: none;
+        }
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -402,18 +422,18 @@
         </div>
     </div>
     <nav class="nav-bar">
-        <div class="wrap" style="display:flex; justify-content:space-between; align-items:center;">
+        <div class="wrap nav-inner">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
                     <a href="#">Rechtsgebieden &#9662;</a>
                     <div class="dropdown-menu">
-                        <a href="#">IT-recht &amp; Databankrecht</a>
-                        <a href="#">Privacy &amp; AVG</a>
-                        <a href="#">Ondernemingsrecht</a>
-                        <a href="#">Intellectueel Eigendom</a>
-                        <a href="#">Beslagrecht &amp; Executierecht</a>
-                        <a href="#">Cybersecurity &amp; Compliance</a>
+                        <a href="rechtsgebieden/it-recht.html">IT-recht &amp; Databankrecht</a>
+                        <a href="rechtsgebieden/privacy.html">Privacy &amp; AVG</a>
+                        <a href="rechtsgebieden/ondernemingsrecht.html">Ondernemingsrecht</a>
+                        <a href="rechtsgebieden/intellectueel-eigendom.html">Intellectueel Eigendom</a>
+                        <a href="rechtsgebieden/beslagrecht.html">Beslagrecht &amp; Executierecht</a>
+                        <a href="rechtsgebieden/cybersecurity.html">Cybersecurity &amp; Compliance</a>
                     </div>
                 </li>
                 <li><a href="#kantoor">Het kantoor</a></li>
@@ -444,42 +464,42 @@
             <div class="expertise-item">
                 <div class="num">01</div>
                 <div>
-                    <h3><a href="#">IT-recht &amp; Databankrecht</a></h3>
+                    <h3><a href="rechtsgebieden/it-recht.html">IT-recht &amp; Databankrecht</a></h3>
                     <p>Handhaving van databankrechten, bestrijding van ongeautoriseerde data-extractie (scraping), SaaS-geschillen en softwarelicenties.</p>
                 </div>
             </div>
             <div class="expertise-item">
                 <div class="num">02</div>
                 <div>
-                    <h3><a href="#">Privacy &amp; AVG</a></h3>
+                    <h3><a href="rechtsgebieden/privacy.html">Privacy &amp; AVG</a></h3>
                     <p>AVG-compliance, verwerkersovereenkomsten, DPIA's en bijstand bij handhavingsbesluiten van de Autoriteit Persoonsgegevens.</p>
                 </div>
             </div>
             <div class="expertise-item">
                 <div class="num">03</div>
                 <div>
-                    <h3><a href="#">Ondernemingsrecht</a></h3>
+                    <h3><a href="rechtsgebieden/ondernemingsrecht.html">Ondernemingsrecht</a></h3>
                     <p>Aandeelhoudersgeschillen, bestuurdersaansprakelijkheid, herstructureringen en vennootschapsrechtelijk advies.</p>
                 </div>
             </div>
             <div class="expertise-item">
                 <div class="num">04</div>
                 <div>
-                    <h3><a href="#">Intellectueel Eigendom</a></h3>
+                    <h3><a href="rechtsgebieden/intellectueel-eigendom.html">Intellectueel Eigendom</a></h3>
                     <p>Bescherming en handhaving van merken, auteursrechten en octrooien. Ervaring met grensoverschrijdende IP-geschillen.</p>
                 </div>
             </div>
             <div class="expertise-item">
                 <div class="num">05</div>
                 <div>
-                    <h3><a href="#">Beslagrecht &amp; Executierecht</a></h3>
+                    <h3><a href="rechtsgebieden/beslagrecht.html">Beslagrecht &amp; Executierecht</a></h3>
                     <p>Conservatoir en executoriaal beslag, opheffingsprocedures, kort gedingen en executiegeschillen.</p>
                 </div>
             </div>
             <div class="expertise-item">
                 <div class="num">06</div>
                 <div>
-                    <h3><a href="#">Cybersecurity &amp; Compliance</a></h3>
+                    <h3><a href="rechtsgebieden/cybersecurity.html">Cybersecurity &amp; Compliance</a></h3>
                     <p>Incident response, NIS2-compliance, forensisch IT-onderzoek en contractuele cybersecurity-verplichtingen.</p>
                 </div>
             </div>
@@ -606,11 +626,11 @@
             <div>
                 <h4>Rechtsgebieden</h4>
                 <ul>
-                    <li><a href="#">IT-recht</a></li>
-                    <li><a href="#">Privacy &amp; AVG</a></li>
-                    <li><a href="#">Ondernemingsrecht</a></li>
-                    <li><a href="#">Intellectueel Eigendom</a></li>
-                    <li><a href="#">Beslagrecht</a></li>
+                    <li><a href="rechtsgebieden/it-recht.html">IT-recht</a></li>
+                    <li><a href="rechtsgebieden/privacy.html">Privacy &amp; AVG</a></li>
+                    <li><a href="rechtsgebieden/ondernemingsrecht.html">Ondernemingsrecht</a></li>
+                    <li><a href="rechtsgebieden/intellectueel-eigendom.html">Intellectueel Eigendom</a></li>
+                    <li><a href="rechtsgebieden/beslagrecht.html">Beslagrecht</a></li>
                 </ul>
             </div>
             <div>
