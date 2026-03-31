@@ -26,7 +26,11 @@
         .wrap { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
 
         /* ── HEADER ── */
-        .site-header { background: #1a2744; }
+        .site-header { }
+        .header-top {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
         .header-inner {
             display: flex;
             align-items: center;
@@ -37,32 +41,32 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            color: #fff;
         }
-        .logo img { height: 46px; }
+        .logo img { height: 52px; }
         .logo-text {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 600;
-            color: #fff;
+            color: #1a2744;
             line-height: 1.2;
         }
         .logo-text span {
             display: block;
             font-size: 10px;
             font-weight: 400;
-            color: rgba(255,255,255,0.5);
+            color: #8b7340;
             text-transform: uppercase;
             letter-spacing: 2.5px;
             margin-top: 2px;
         }
         .header-right {
-            color: rgba(255,255,255,0.6);
+            color: #888;
             font-size: 13px;
             text-align: right;
+            line-height: 1.6;
         }
-        .header-right a { color: rgba(255,255,255,0.8); }
-        .header-right a:hover { color: #fff; }
-        .header-right strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+        .header-right a { color: #1a2744; }
+        .header-right a:hover { color: #8b7340; }
+        .header-right strong { color: #1a2744; font-weight: 600; }
 
         /* ── BREADCRUMB ── */
         .breadcrumb {
@@ -304,15 +308,17 @@
 
 <!-- HEADER -->
 <header class="site-header">
-    <div class="wrap">
-        <div class="header-inner">
-            <a href="../" class="logo">
-                <img src="../logo.png" alt="Visser & De Vries Advocaten">
-                <div class="logo-text">Visser & De Vries <span>Advocaten N.V.</span></div>
-            </a>
-            <div class="header-right">
-                <strong>+31 (0)20 549 23 10</strong><br>
-                <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
+    <div class="header-top">
+        <div class="wrap">
+            <div class="header-inner">
+                <a href="../" class="logo">
+                    <img src="../logo.png" alt="Visser & De Vries Advocaten">
+                    <div class="logo-text">Visser & De Vries <span>Advocaten N.V.</span></div>
+                </a>
+                <div class="header-right">
+                    <strong>+31 (0)20 549 23 10</strong><br>
+                    <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
+                </div>
             </div>
         </div>
     </div>
