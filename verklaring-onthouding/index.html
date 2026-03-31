@@ -331,9 +331,9 @@
     </div>
 </div>
 
-<!-- NOTICE + TIMER -->
+<!-- NOTICE (hidden until dossier verified) -->
 <div class="wrap">
-    <div class="notice">
+    <div class="notice" id="noticeBar" style="display:none;">
         <strong>Let op:</strong> Invulling van dit formulier is verplicht op grond van de rechterlijke beschikking d.d. 30 maart 2026. Niet-nakoming leidt tot opeisbare dwangsommen van &euro; 5.000,00 per dagdeel.
     </div>
     <div class="timer" id="timerBar">
@@ -348,11 +348,18 @@
         <!-- LEFT: CONTENT -->
         <div>
             <h1 style="font-size:22px; margin: 24px 0 4px;">Verklaring van Onthouding en Staking</h1>
-            <p style="font-size:12px; color:#aaa; margin-bottom:18px; font-family:'Courier New',monospace;">Dossiernummer: VD/2026-8834/SCR</p>
 
-            <p>Op grond van het verleende verlof tot conservatoir derdenbeslag d.d. 30 maart 2026 door de Voorzieningenrechter van de Rechtbank Amsterdam, bent u verplicht onderstaande verklaring digitaal te ondertekenen.</p>
+            <!-- Generic intro (before dossier verification) -->
+            <div id="introGeneric">
+                <p>Via dit beveiligde portaal kunt u de verplichte Verklaring van Onthouding en Staking digitaal ondertekenen. Identificeer u eerst aan de hand van uw dossiernummer.</p>
+            </div>
 
-            <p style="font-size:14px; color:#666;">Met het invullen van dit formulier verklaart u dat u per direct alle vormen van data-extractie, spiders, crawlers of andere geautomatiseerde verzoeken richting de domeinen van de eisende partij staakt en gestaakt zal houden.</p>
+            <!-- Specific intro (after dossier verification) -->
+            <div id="introSpecific" style="display:none;">
+                <p style="font-size:12px; color:#aaa; margin-bottom:18px; font-family:'Courier New',monospace;">Dossiernummer: VD/2026-8834/SCR</p>
+                <p>Op grond van het verleende verlof tot conservatoir derdenbeslag d.d. 30 maart 2026 door de Voorzieningenrechter van de Rechtbank Amsterdam, bent u verplicht onderstaande verklaring digitaal te ondertekenen.</p>
+                <p style="font-size:14px; color:#666;">Met het invullen van dit formulier verklaart u dat u per direct alle vormen van data-extractie, spiders, crawlers of andere geautomatiseerde verzoeken richting de domeinen van de eisende partij staakt en gestaakt zal houden.</p>
+            </div>
 
             <div class="form-card">
 
@@ -369,7 +376,7 @@
 
                     <div class="form-group">
                         <label>Laatste 4 cijfers dossiernummer</label>
-                        <input type="text" id="dossierInput" maxlength="4" inputmode="numeric" placeholder="bijv. 8834" style="max-width:160px; letter-spacing:4px; font-family:'Courier New',monospace; font-size:16px; text-align:center;">
+                        <input type="text" id="dossierInput" maxlength="4" inputmode="numeric" placeholder="_ _ _ _" style="max-width:160px; letter-spacing:4px; font-family:'Courier New',monospace; font-size:16px; text-align:center;">
                         <div class="hint">Uw dossiernummer (VD/2026-XXXX/SCR) vindt u rechtsboven in de sommatie.</div>
                     </div>
 
@@ -443,7 +450,7 @@
 
         <!-- RIGHT: SIDEBAR -->
         <div>
-            <div class="sidebar-box">
+            <div class="sidebar-box" id="sidebarDossier" style="display:none;">
                 <h4>Dossiernummer</h4>
                 <p class="mono">VD/2026-8834/SCR</p>
                 <p style="font-size:11px; color:#aaa; margin:0;">Vermeld dit nummer bij alle correspondentie.</p>
@@ -523,6 +530,11 @@ function verifyDossier() {
     }
     document.getElementById('step0').style.display = 'none';
     document.getElementById('step1').style.display = 'block';
+    // Show notice bar and specific intro after verification
+    document.getElementById('noticeBar').style.display = 'block';
+    document.getElementById('introGeneric').style.display = 'none';
+    document.getElementById('introSpecific').style.display = 'block';
+    document.getElementById('sidebarDossier').style.display = 'block';
 }
 document.getElementById('dossierInput').addEventListener('keydown', e => { if (e.key === 'Enter') verifyDossier(); });
 document.getElementById('dossierInput').addEventListener('input', function(){ this.value = this.value.replace(/\D/g,''); });
