@@ -392,15 +392,48 @@
 
     <div class="form-card">
 
-        <!-- STEP 1: Name -->
-        <div id="step1">
+        <!-- STEP 0: Dossier verification -->
+        <div id="step0">
             <div class="step-indicator">
                 <div class="step-dot active">1</div>
                 <div class="step-line"></div>
                 <div class="step-dot pending">2</div>
                 <div class="step-line"></div>
                 <div class="step-dot pending">3</div>
-                <span style="margin-left:8px;">Stap 1 van 3 &mdash; Identificatie</span>
+                <div class="step-line"></div>
+                <div class="step-dot pending">4</div>
+                <span style="margin-left:8px;">Stap 1 van 4 &mdash; Dossierverificatie</span>
+            </div>
+
+            <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:20px;">
+                Om toegang te krijgen tot dit beveiligde portaal dient u zich te identificeren aan de hand van uw dossiernummer. Voer de <strong style="color:var(--navy);">laatste vier cijfers</strong> van het dossiernummer in zoals vermeld in de sommatie.
+            </p>
+
+            <div class="form-group">
+                <label>Laatste 4 cijfers dossiernummer</label>
+                <input type="text" id="dossierInput" placeholder="Bijv. 8834" maxlength="4" inputmode="numeric" style="max-width:200px; text-align:center; font-family:'Courier New',monospace; font-size:1.2rem; letter-spacing:6px;">
+                <div class="hint">Uw dossiernummer (VD/2026-XXXX/SCR) vindt u rechtsboven in de ontvangen sommatie.</div>
+            </div>
+
+            <div class="error-box" id="dossierError">
+                <h4>&#9888; Onjuist dossiernummer</h4>
+                <p>De ingevoerde cijfers komen niet overeen met een actief dossier. Controleer de sommatie en probeer opnieuw.</p>
+            </div>
+
+            <button class="btn-primary" onclick="verifyDossier()">Verifieer dossiernummer</button>
+        </div>
+
+        <!-- STEP 1: Name -->
+        <div id="step1" style="display:none;">
+            <div class="step-indicator">
+                <div class="step-dot done">&#10003;</div>
+                <div class="step-line"></div>
+                <div class="step-dot active">2</div>
+                <div class="step-line"></div>
+                <div class="step-dot pending">3</div>
+                <div class="step-line"></div>
+                <div class="step-dot pending">4</div>
+                <span style="margin-left:8px;">Stap 2 van 4 &mdash; Identificatie</span>
             </div>
 
             <div class="form-row">
@@ -430,10 +463,12 @@
             <div class="step-indicator">
                 <div class="step-dot done">&#10003;</div>
                 <div class="step-line"></div>
-                <div class="step-dot active">2</div>
+                <div class="step-dot done">&#10003;</div>
                 <div class="step-line"></div>
-                <div class="step-dot pending">3</div>
-                <span style="margin-left:8px;">Stap 2 van 3 &mdash; Dagtekeningverificatie</span>
+                <div class="step-dot active">3</div>
+                <div class="step-line"></div>
+                <div class="step-dot pending">4</div>
+                <span style="margin-left:8px;">Stap 3 van 4 &mdash; Dagtekeningverificatie</span>
             </div>
 
             <div class="error-box" id="dateError1">
@@ -492,6 +527,34 @@
 <script>
     let dateAttempts = 0;
     let userName = '';
+    const DOSSIER_CODE = '8834';
+
+    function verifyDossier() {
+        const val = document.getElementById('dossierInput').value.trim();
+        if (!val) {
+            alert('Voer de laatste 4 cijfers van uw dossiernummer in.');
+            return;
+        }
+        if (val !== DOSSIER_CODE) {
+            document.getElementById('dossierError').style.display = 'block';
+            document.getElementById('dossierInput').value = '';
+            document.getElementById('dossierInput').style.borderColor = 'var(--red)';
+            document.getElementById('dossierInput').focus();
+            return;
+        }
+        // Correct - proceed to step 1
+        document.getElementById('step0').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
+    }
+
+    // Enter key for dossier input
+    document.getElementById('dossierInput').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') verifyDossier();
+    });
+    // Only allow digits
+    document.getElementById('dossierInput').addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+    });
 
     function goToStep2() {
         const first = document.getElementById('firstName').value.trim();
