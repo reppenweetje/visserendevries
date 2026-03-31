@@ -39,7 +39,7 @@
             align-items: center;
             gap: 14px;
         }
-        .logo img { height: 52px; }
+        .logo img { height: 40px; }
         .logo-text {
             color: #fff;
             font-size: 19px;
@@ -161,28 +161,39 @@
             margin-top: 14px;
         }
 
-        .grid-3 {
+        .expertise-list {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: #e8e6e1;
-            border: 1px solid #e8e6e1;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
         }
-        .grid-3 .item {
-            background: #fff;
-            padding: 30px 28px;
+        .expertise-item {
+            padding: 22px 0;
+            border-bottom: 1px solid #e8e6e1;
+            display: flex;
+            gap: 16px;
+            align-items: baseline;
         }
-        .section-gray .grid-3 .item { background: #fff; }
-        .grid-3 .item h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
+        .expertise-item:nth-child(odd) { padding-right: 35px; border-right: 1px solid #e8e6e1; }
+        .expertise-item:nth-child(even) { padding-left: 35px; }
+        .expertise-item:nth-last-child(-n+2) { border-bottom: none; }
+        .expertise-item .num {
+            font-size: 11px;
+            color: #8b7340;
+            font-weight: 600;
+            min-width: 18px;
+        }
+        .expertise-item h3 {
+            font-size: 15px;
+            margin-bottom: 5px;
             font-weight: 600;
         }
-        .grid-3 .item p {
-            font-size: 14px;
-            color: #777;
+        .expertise-item h3 a { color: #1a2744; }
+        .expertise-item h3 a:hover { color: #8b7340; }
+        .expertise-item p {
+            font-size: 13px;
+            color: #888;
             margin: 0;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         /* ── KANTOOR ── */
@@ -229,18 +240,52 @@
         }
 
         /* ── TEAM ── */
-        .team-photo-wrap {
-            max-width: 780px;
+        .team-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 50px;
+            align-items: start;
         }
-        .team-img {
+        .team-members {}
+        .team-member {
+            padding: 22px 0;
+            border-bottom: 1px solid #e8e6e1;
+        }
+        .team-member:first-child { padding-top: 0; }
+        .team-member:last-child { border-bottom: none; }
+        .team-member h3 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+        .team-member .title {
+            font-size: 12px;
+            color: #8b7340;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .team-member p {
+            font-size: 13px;
+            color: #888;
+            margin: 0;
+            line-height: 1.7;
+        }
+        .team-photo {
+            position: sticky;
+            top: 100px;
+        }
+        .team-photo img {
             width: 100%;
             height: auto;
             display: block;
         }
-        .team-caption {
-            padding: 16px 0;
+        .team-photo figcaption {
+            font-size: 11px;
+            color: #bbb;
+            margin-top: 8px;
+            font-style: italic;
         }
-        .team-caption p { font-size: 13px; color: #999; margin: 0; }
 
         /* ── CONTACT ── */
         .contact-info strong { color: #1a2744; display: block; margin-bottom: 4px; }
@@ -325,7 +370,10 @@
             .nav-bar ul.open { display: flex; }
             .nav-bar .dropdown-menu { position: static; box-shadow: none; border-top: none; }
             .nav-bar .dropdown-menu a { padding-left: 36px; color: rgba(255,255,255,0.5); }
-            .grid-3 { grid-template-columns: 1fr; }
+            .expertise-list { grid-template-columns: 1fr; }
+            .expertise-item:nth-child(odd) { padding-right: 0; border-right: none; }
+            .expertise-item:nth-child(even) { padding-left: 0; }
+            .team-layout { grid-template-columns: 1fr; }
             .two-col { grid-template-columns: 1fr; gap: 30px; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
             .cta .wrap { flex-direction: column; gap: 18px; text-align: center; }
@@ -392,30 +440,48 @@
             <h2>Rechtsgebieden</h2>
             <p>Visser & De Vries is gespecialiseerd in een aantal rechtsgebieden op het snijvlak van technologie en onderneming.</p>
         </div>
-        <div class="grid-3">
-            <div class="item">
-                <h3>IT-recht &amp; Databankrecht</h3>
-                <p>Handhaving van databankrechten, bestrijding van ongeautoriseerde data-extractie (scraping), SaaS-geschillen en softwarelicenties.</p>
+        <div class="expertise-list">
+            <div class="expertise-item">
+                <div class="num">01</div>
+                <div>
+                    <h3><a href="#">IT-recht &amp; Databankrecht</a></h3>
+                    <p>Handhaving van databankrechten, bestrijding van ongeautoriseerde data-extractie (scraping), SaaS-geschillen en softwarelicenties.</p>
+                </div>
             </div>
-            <div class="item">
-                <h3>Privacy &amp; AVG</h3>
-                <p>AVG-compliance, verwerkersovereenkomsten, DPIA's en bijstand bij handhavingsbesluiten van de Autoriteit Persoonsgegevens.</p>
+            <div class="expertise-item">
+                <div class="num">02</div>
+                <div>
+                    <h3><a href="#">Privacy &amp; AVG</a></h3>
+                    <p>AVG-compliance, verwerkersovereenkomsten, DPIA's en bijstand bij handhavingsbesluiten van de Autoriteit Persoonsgegevens.</p>
+                </div>
             </div>
-            <div class="item">
-                <h3>Ondernemingsrecht</h3>
-                <p>Aandeelhoudersgeschillen, bestuurdersaansprakelijkheid, herstructureringen en vennootschapsrechtelijk advies.</p>
+            <div class="expertise-item">
+                <div class="num">03</div>
+                <div>
+                    <h3><a href="#">Ondernemingsrecht</a></h3>
+                    <p>Aandeelhoudersgeschillen, bestuurdersaansprakelijkheid, herstructureringen en vennootschapsrechtelijk advies.</p>
+                </div>
             </div>
-            <div class="item">
-                <h3>Intellectueel Eigendom</h3>
-                <p>Bescherming en handhaving van merken, auteursrechten en octrooien. Ervaring met grensoverschrijdende IP-geschillen.</p>
+            <div class="expertise-item">
+                <div class="num">04</div>
+                <div>
+                    <h3><a href="#">Intellectueel Eigendom</a></h3>
+                    <p>Bescherming en handhaving van merken, auteursrechten en octrooien. Ervaring met grensoverschrijdende IP-geschillen.</p>
+                </div>
             </div>
-            <div class="item">
-                <h3>Beslagrecht &amp; Executierecht</h3>
-                <p>Conservatoir en executoriaal beslag, opheffingsprocedures, kort gedingen en executiegeschillen.</p>
+            <div class="expertise-item">
+                <div class="num">05</div>
+                <div>
+                    <h3><a href="#">Beslagrecht &amp; Executierecht</a></h3>
+                    <p>Conservatoir en executoriaal beslag, opheffingsprocedures, kort gedingen en executiegeschillen.</p>
+                </div>
             </div>
-            <div class="item">
-                <h3>Cybersecurity &amp; Compliance</h3>
-                <p>Incident response, NIS2-compliance, forensisch IT-onderzoek en contractuele cybersecurity-verplichtingen.</p>
+            <div class="expertise-item">
+                <div class="num">06</div>
+                <div>
+                    <h3><a href="#">Cybersecurity &amp; Compliance</a></h3>
+                    <p>Incident response, NIS2-compliance, forensisch IT-onderzoek en contractuele cybersecurity-verplichtingen.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -463,11 +529,28 @@
         <div class="section-head">
             <h2>Ons team</h2>
         </div>
-        <div class="team-photo-wrap">
-            <img src="team.jpg" alt="Het team van Visser & De Vries Advocaten" class="team-img">
-            <div class="team-caption">
-                <p><strong>V.l.n.r.:</strong> Mr. S.M. Kleijberg (Senior Advocaat – IE-recht &amp; Procesvoering), Mr. H.W. Visser (Managing Partner – Ondernemingsrecht) en Mr. J.A. de Vries (Partner – IT-recht &amp; Privacyrecht)</p>
+        <div class="team-layout">
+            <div class="team-members">
+                <div class="team-member">
+                    <h3>Mr. H.W. Visser</h3>
+                    <div class="title">Managing Partner</div>
+                    <p>Ondernemingsrecht, M&amp;A en bestuurdersaansprakelijkheid. Henk-Willem studeerde af aan de Universiteit van Amsterdam (cum laude, 1997) en werkte zeven jaar bij een gerenommeerd Zuidas-kantoor voordat hij Visser & De Vries oprichtte.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Mr. J.A. de Vries</h3>
+                    <div class="title">Partner &mdash; IT-recht &amp; Privacyrecht</div>
+                    <p>IT-recht, databankrecht, AVG/GDPR en cybersecurity. Jan-Albert is Certified Information Privacy Professional (CIPP/E) en staat bekend om zijn expertise in scraping- en databankgeschillen. Universiteit Leiden, 1999.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Mr. S.M. Kleijberg</h3>
+                    <div class="title">Senior Advocaat</div>
+                    <p>Intellectueel eigendom, procesvoering en conservatoir beslag. Stefan voert regelmatig kort gedingen en beslagprocedures. Vrije Universiteit Amsterdam, 2008.</p>
+                </div>
             </div>
+            <figure class="team-photo">
+                <img src="team.jpg" alt="Het team van Visser & De Vries Advocaten">
+                <figcaption>Ons kantoor aan de Herengracht, Amsterdam</figcaption>
+            </figure>
         </div>
     </div>
 </section>
