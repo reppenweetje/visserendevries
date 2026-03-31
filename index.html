@@ -161,30 +161,19 @@
         }
 
         /* TEAM */
-        .team-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+        .team-photo-section { max-width: 800px; }
+        .team-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%);
         }
-        .team-member {
-            text-align: center;
+        .team-caption {
+            padding: 14px 0;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            margin-top: 2px;
         }
-        .team-member .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #e8e8e8;
-            margin: 0 auto 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            color: #999;
-        }
-        .team-member h4 { font-size: 15px; margin-bottom: 4px; }
-        .team-member .title { font-size: 12px; color: #2EA3F2; margin-bottom: 6px; }
-        .team-member p { font-size: 12px; color: #999; }
+        .team-caption p { font-size: 13px; color: #888; margin: 0; }
 
         /* CTA */
         .cta-bar {
@@ -388,24 +377,10 @@
         <h2>Ons team</h2>
         <p>Onze advocaten zijn stuk voor stuk specialisten op hun vakgebied.</p>
         <br>
-        <div class="team-row">
-            <div class="team-member">
-                <div class="avatar">HV</div>
-                <h4>Mr. H.W. Visser</h4>
-                <div class="title">Managing Partner</div>
-                <p>Ondernemingsrecht, M&amp;A</p>
-            </div>
-            <div class="team-member">
-                <div class="avatar">JV</div>
-                <h4>Mr. J.A. de Vries</h4>
-                <div class="title">Partner</div>
-                <p>IT-recht, Databankrecht, AVG</p>
-            </div>
-            <div class="team-member">
-                <div class="avatar">SK</div>
-                <h4>Mr. S.M. Kleijberg</h4>
-                <div class="title">Senior Advocaat</div>
-                <p>IE-recht, Procesvoering, Beslag</p>
+        <div class="team-photo-section">
+            <img src="team.jpg" alt="Het team van Visser & De Vries Advocaten" class="team-img">
+            <div class="team-caption">
+                <p><strong>V.l.n.r.:</strong> Mr. S.M. Kleijberg (Senior Advocaat – IE-recht &amp; Procesvoering), Mr. H.W. Visser (Managing Partner – Ondernemingsrecht) en Mr. J.A. de Vries (Partner – IT-recht &amp; Privacyrecht)</p>
             </div>
         </div>
     </div>
