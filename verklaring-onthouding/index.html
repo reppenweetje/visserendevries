@@ -3,301 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verklaring van Onthouding en Staking — Visser & De Vries Advocaten N.V.</title>
+    <title>Verklaring van Onthouding en Staking | Visser & De Vries Advocaten N.V.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --navy: #1a2744;
-            --navy-light: #243656;
-            --navy-dark: #0f1a2e;
-            --gold: #b89a4a;
-            --gold-light: #d4b96a;
-            --silver: #9ca3af;
-            --cream: #f8f6f1;
-            --white: #ffffff;
-            --text: #2c2c2c;
-            --text-light: #6b7280;
-            --border: #e5e2db;
-            --red: #b91c1c;
-            --red-light: #fef2f2;
-            --red-border: #fecaca;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'Source Sans 3', 'Georgia', serif;
-            color: var(--text);
-            background: #f3f1ec;
-            line-height: 1.7;
-            min-height: 100vh;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7em;
+            background: #fff;
         }
+        a { color: #2EA3F2; text-decoration: none; }
+        a:hover { color: #1a8cd8; }
+        h1, h2, h3, h4 { color: #333; font-weight: 600; }
+        p { margin-bottom: 14px; }
+
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 30px; }
 
         /* HEADER */
         .header {
-            background: var(--navy);
-            border-bottom: 3px solid var(--gold);
-            padding: 16px 0;
+            background: #fff;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 15px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .header .container {
+        .header .wrap {
             display: flex;
             align-items: center;
-            gap: 16px;
+            justify-content: space-between;
         }
-        .header img { height: 50px; }
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            color: var(--white);
-            font-size: 1.3rem;
-            font-weight: 600;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #333;
         }
-        .header .subtitle {
-            color: var(--gold);
-            font-size: 0.7rem;
+        .logo img { height: 50px; }
+        .logo-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.3;
+        }
+        .logo-text span {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: #999;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+        }
+        .header-right {
+            font-size: 12px;
+            color: #999;
+            text-align: right;
+        }
+        .header-right strong { color: #333; }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            padding: 14px 0;
+            font-size: 12px;
+            color: #999;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .breadcrumb a { color: #999; }
+        .breadcrumb a:hover { color: #2EA3F2; }
+
+        /* WARNING BANNER */
+        .notice {
+            background: #fff8e1;
+            border-left: 4px solid #f5a623;
+            padding: 14px 20px;
+            font-size: 13px;
+            color: #7a5d00;
+            margin: 20px 0;
+        }
+        .notice strong { color: #5c4500; }
+
+        /* MAIN LAYOUT */
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+            padding: 30px 0 60px;
         }
 
-        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        /* SIDEBAR */
+        .sidebar-box {
+            background: #f7f7f7;
+            padding: 22px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+        .sidebar-box h4 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .sidebar-box p { font-size: 13px; margin-bottom: 8px; }
+        .sidebar-box ul { list-style: none; }
+        .sidebar-box li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 13px;
+        }
+        .sidebar-box li:last-child { border-bottom: none; }
+        .sidebar-box li a { color: #666; }
+        .sidebar-box li a:hover { color: #2EA3F2; }
 
-        /* SSL BAR */
-        .ssl-bar {
-            background: #065f46;
-            color: #a7f3d0;
-            font-size: 0.72rem;
-            padding: 5px 0;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-        .ssl-bar span { opacity: 0.8; }
-
-        /* WARNING BAR */
-        .warning-bar {
-            background: #fef3c7;
-            border-bottom: 1px solid #f59e0b;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 0.82rem;
-            color: #92400e;
-        }
-        .warning-bar strong { color: #78350f; }
-
-        /* MAIN FORM AREA */
-        .form-wrapper {
-            margin: 30px auto;
-            padding-bottom: 60px;
-        }
-
-        .legal-header {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 30px 35px;
-            margin-bottom: 0;
-            border-bottom: none;
-        }
-        .legal-header h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--navy);
-            font-size: 1.4rem;
-            margin-bottom: 6px;
-        }
-        .legal-header .dossier {
-            color: var(--text-light);
-            font-size: 0.82rem;
-            font-family: 'Courier New', monospace;
-            margin-bottom: 16px;
-        }
-        .legal-header p {
-            font-size: 0.88rem;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-        .legal-header p strong {
-            color: var(--red);
-        }
-
+        /* FORM AREA */
         .form-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 35px;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 28px;
+            margin-top: 20px;
         }
-
-        .step-indicator {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 24px;
-            font-size: 0.78rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        .step-dot {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        .step-dot.active {
-            background: var(--navy);
-            color: var(--white);
-        }
-        .step-dot.done {
-            background: #065f46;
-            color: var(--white);
-        }
-        .step-dot.pending {
-            background: var(--border);
-            color: var(--text-light);
-        }
-        .step-line {
-            flex: 0 0 30px;
-            height: 1px;
-            background: var(--border);
-        }
-
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         .form-group label {
             display: block;
-            font-size: 0.82rem;
+            font-size: 13px;
             font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #333;
+            margin-bottom: 5px;
         }
         .form-group input {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border);
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.95rem;
-            background: var(--cream);
-            color: var(--text);
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            font-size: 13px;
             outline: none;
-            transition: border-color 0.2s;
+            background: #fff;
+            color: #333;
         }
-        .form-group input:focus {
-            border-color: var(--gold);
-        }
+        .form-group input:focus { border-color: #2EA3F2; }
         .form-group .hint {
-            font-size: 0.75rem;
-            color: var(--text-light);
+            font-size: 11px;
+            color: #999;
             margin-top: 4px;
         }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 14px;
         }
-
-        .btn-primary {
-            background: var(--navy);
-            color: var(--white);
+        .btn-submit {
+            background: #2EA3F2;
+            color: #fff;
             border: none;
-            padding: 14px 40px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            font-family: 'Source Sans 3', sans-serif;
+            padding: 11px 28px;
+            font-size: 13px;
             font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            margin-top: 6px;
             transition: background 0.2s;
-            width: 100%;
-            margin-top: 10px;
         }
-        .btn-primary:hover { background: var(--navy-light); }
+        .btn-submit:hover { background: #1a8cd8; }
 
-        /* ERROR MESSAGE */
-        .error-box {
-            background: var(--red-light);
-            border: 1px solid var(--red-border);
-            border-left: 4px solid var(--red);
-            padding: 16px 20px;
+        /* STEP INDICATOR */
+        .steps {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 18px;
+            font-size: 11px;
+        }
+        .step-pill {
+            padding: 4px 12px;
+            background: #e8e8e8;
+            color: #999;
+            font-weight: 600;
+        }
+        .step-pill.active { background: #2EA3F2; color: #fff; }
+        .step-pill.done { background: #4CAF50; color: #fff; }
+
+        /* ERROR */
+        .error-msg {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-left: 3px solid #dc2626;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #991b1b;
+            display: none;
+        }
+        .error-msg strong { color: #7f1d1d; }
+
+        /* TIMER */
+        .timer {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 8px 16px;
+            font-size: 12px;
+            color: #991b1b;
+            text-align: center;
             margin-bottom: 20px;
             display: none;
         }
-        .error-box h4 {
-            color: var(--red);
-            font-size: 0.88rem;
-            margin-bottom: 4px;
-        }
-        .error-box p {
-            color: #991b1b;
-            font-size: 0.82rem;
-            line-height: 1.6;
+        .timer code {
+            font-weight: 700;
+            font-size: 14px;
         }
 
-        /* SUCCESS / APRIL FOOLS */
+        /* REVEAL OVERLAY */
         .reveal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(15, 26, 46, 0.95);
+            background: rgba(0,0,0,0.75);
             z-index: 1000;
             align-items: center;
             justify-content: center;
         }
-        .reveal-overlay.show {
-            display: flex;
-        }
-        .reveal-card {
-            background: var(--white);
-            max-width: 520px;
+        .reveal-overlay.show { display: flex; }
+        .reveal-box {
+            background: #fff;
+            max-width: 480px;
             width: 90%;
-            padding: 50px 40px;
+            padding: 40px 35px;
             text-align: center;
-            border-top: 5px solid var(--gold);
-            position: relative;
-            animation: slideUp 0.6s ease-out;
+            animation: fadeUp 0.5s ease-out;
         }
-        @keyframes slideUp {
-            from { transform: translateY(40px); opacity: 0; }
+        @keyframes fadeUp {
+            from { transform: translateY(30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        .reveal-card .date {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--navy);
+        .reveal-box .big-date {
+            font-size: 72px;
             font-weight: 700;
+            color: #2EA3F2;
             line-height: 1;
-            margin-bottom: 8px;
         }
-        .reveal-card .april {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            color: var(--gold);
+        .reveal-box .big-month {
+            font-size: 36px;
             font-weight: 700;
+            color: #333;
             text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-bottom: 24px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
         }
-        .reveal-card .message {
-            font-size: 1.05rem;
-            color: var(--text-light);
+        .reveal-box p {
+            font-size: 14px;
+            color: #666;
             line-height: 1.8;
-            margin-bottom: 10px;
         }
-        .reveal-card .message strong {
-            color: var(--text);
-        }
-        .reveal-card .small {
-            font-size: 0.8rem;
-            color: var(--silver);
+        .reveal-box p strong { color: #333; }
+        .reveal-box .fine-print {
+            font-size: 11px;
+            color: #bbb;
             margin-top: 20px;
             font-style: italic;
         }
 
         /* CONFETTI */
-        .confetti-container {
+        .confetti-wrap {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -305,381 +271,337 @@
             z-index: 1001;
             overflow: hidden;
         }
-        .confetti {
+        .confetti-piece {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            top: -10px;
-            animation: confettiFall linear forwards;
+            top: -12px;
+            animation: fall linear forwards;
         }
-        @keyframes confettiFall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(720deg); opacity: 0; }
         }
 
-        /* LEGAL FOOTER */
-        .legal-footer {
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: #aaa;
+            padding: 25px 0;
+            font-size: 12px;
             text-align: center;
-            padding: 20px;
-            font-size: 0.72rem;
-            color: var(--silver);
-            line-height: 1.6;
         }
-        .legal-footer a { color: var(--text-light); text-decoration: none; }
+        footer a { color: #aaa; }
+        footer a:hover { color: #2EA3F2; }
 
-        /* TIMER */
-        .timer-bar {
-            background: var(--red-light);
-            border: 1px solid var(--red-border);
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 0.82rem;
-            color: var(--red);
-            margin-bottom: 0;
-            display: none;
-        }
-        .timer-bar .countdown {
-            font-family: 'Courier New', monospace;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .page-layout { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
-            .legal-header, .form-card { padding: 20px; }
-            .reveal-card { padding: 30px 24px; }
-            .reveal-card .date { font-size: 3rem; }
-            .reveal-card .april { font-size: 2.2rem; }
+            .header-right { display: none; }
         }
     </style>
 </head>
 <body>
 
-<!-- SSL BAR -->
-<div class="ssl-bar">
-    <span>&#128274; Beveiligde verbinding &mdash; visserendevries.nl &mdash; TLS 1.3 / 256-bit encryptie</span>
-</div>
-
 <!-- HEADER -->
 <div class="header">
-    <div class="container">
-        <img src="../logo.png" alt="Visser & De Vries">
-        <div>
-            <h1>Visser & De Vries</h1>
-            <div class="subtitle">Advocaten N.V.</div>
+    <div class="wrap">
+        <a href="../" class="logo">
+            <img src="../logo.png" alt="Visser & De Vries Advocaten">
+            <div class="logo-text">Visser & De Vries <span>Advocaten N.V.</span></div>
+        </a>
+        <div class="header-right">
+            <strong>T:</strong> +31 (0)20 549 23 10<br>
+            <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
         </div>
+    </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <div class="wrap">
+        <a href="../">Home</a> &rsaquo; <a href="#">Cliëntportaal</a> &rsaquo; Verklaring van Onthouding en Staking
     </div>
 </div>
 
 <!-- WARNING -->
-<div class="warning-bar">
-    &#9888; <strong>Wettelijke verplichting:</strong> Invulling van dit formulier is verplicht op grond van de rechterlijke beschikking. Niet-nakoming leidt tot opeisbare dwangsommen.
+<div class="wrap">
+    <div class="notice">
+        <strong>Let op:</strong> Invulling van dit formulier is verplicht op grond van de rechterlijke beschikking d.d. 30 maart 2026. Niet-nakoming leidt tot opeisbare dwangsommen van &euro; 5.000,00 per dagdeel.
+    </div>
 </div>
 
 <!-- TIMER -->
-<div class="timer-bar" id="timerBar">
-    Resterende tijd voor invulling: <span class="countdown" id="countdown">04:58:33</span> &mdash; Na verstrijking wordt een dwangsom van &euro; 5.000,00 per dagdeel opgelegd.
-</div>
-
-<!-- FORM -->
-<div class="container form-wrapper">
-
-    <div class="legal-header">
-        <h2>Verklaring van Onthouding en Staking</h2>
-        <div class="dossier">Dossiernummer: VD/2026-8834/SCR</div>
-        <p>Op grond van het verleende verlof tot conservatoir derdenbeslag d.d. 30 maart 2026 door de Voorzieningenrechter van de Rechtbank Amsterdam, bent u verplicht onderstaande verklaring digitaal te ondertekenen. <strong>Weigering resulteert in direct opeisbare dwangsommen.</strong></p>
-    </div>
-
-    <div class="form-card">
-
-        <!-- STEP 0: Dossier verification -->
-        <div id="step0">
-            <div class="step-indicator">
-                <div class="step-dot active">1</div>
-                <div class="step-line"></div>
-                <div class="step-dot pending">2</div>
-                <div class="step-line"></div>
-                <div class="step-dot pending">3</div>
-                <div class="step-line"></div>
-                <div class="step-dot pending">4</div>
-                <span style="margin-left:8px;">Stap 1 van 4 &mdash; Dossierverificatie</span>
-            </div>
-
-            <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:20px;">
-                Om toegang te krijgen tot dit beveiligde portaal dient u zich te identificeren aan de hand van uw dossiernummer. Voer de <strong style="color:var(--navy);">laatste vier cijfers</strong> van het dossiernummer in zoals vermeld in de sommatie.
-            </p>
-
-            <div class="form-group">
-                <label>Laatste 4 cijfers dossiernummer</label>
-                <input type="text" id="dossierInput" placeholder="Bijv. 8834" maxlength="4" inputmode="numeric" style="max-width:200px; text-align:center; font-family:'Courier New',monospace; font-size:1.2rem; letter-spacing:6px;">
-                <div class="hint">Uw dossiernummer (VD/2026-XXXX/SCR) vindt u rechtsboven in de ontvangen sommatie.</div>
-            </div>
-
-            <div class="error-box" id="dossierError">
-                <h4>&#9888; Onjuist dossiernummer</h4>
-                <p>De ingevoerde cijfers komen niet overeen met een actief dossier. Controleer de sommatie en probeer opnieuw.</p>
-            </div>
-
-            <button class="btn-primary" onclick="verifyDossier()">Verifieer dossiernummer</button>
-        </div>
-
-        <!-- STEP 1: Name -->
-        <div id="step1" style="display:none;">
-            <div class="step-indicator">
-                <div class="step-dot done">&#10003;</div>
-                <div class="step-line"></div>
-                <div class="step-dot active">2</div>
-                <div class="step-line"></div>
-                <div class="step-dot pending">3</div>
-                <div class="step-line"></div>
-                <div class="step-dot pending">4</div>
-                <span style="margin-left:8px;">Stap 2 van 4 &mdash; Identificatie</span>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Voornaam / Voornamen</label>
-                    <input type="text" id="firstName" placeholder="Zoals vermeld bij de KvK" required>
-                </div>
-                <div class="form-group">
-                    <label>Achternaam</label>
-                    <input type="text" id="lastName" placeholder="Volledige achternaam" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Naam Onderneming</label>
-                <input type="text" id="companyName" placeholder="Statutaire naam zoals ingeschreven bij KvK">
-            </div>
-            <div class="form-group">
-                <label>Functie</label>
-                <input type="text" id="function" placeholder="Bijv. Directeur, Bestuurder, Vennoot">
-            </div>
-
-            <button class="btn-primary" onclick="goToStep2()">Volgende &rarr;</button>
-        </div>
-
-        <!-- STEP 2: Date verification -->
-        <div id="step2" style="display:none;">
-            <div class="step-indicator">
-                <div class="step-dot done">&#10003;</div>
-                <div class="step-line"></div>
-                <div class="step-dot done">&#10003;</div>
-                <div class="step-line"></div>
-                <div class="step-dot active">3</div>
-                <div class="step-line"></div>
-                <div class="step-dot pending">4</div>
-                <span style="margin-left:8px;">Stap 3 van 4 &mdash; Dagtekeningverificatie</span>
-            </div>
-
-            <div class="error-box" id="dateError1">
-                <h4>&#9888; Verificatie mislukt</h4>
-                <p>De ingevoerde datum komt niet overeen met de systeemdatum van ons beveiligde portaal. Dit kan duiden op een manipulatie van de dagtekening. Voer de correcte datum van vandaag opnieuw in.</p>
-            </div>
-
-            <div class="error-box" id="dateError2">
-                <h4>&#9888; Laatste poging &mdash; Dwangsom dreigt</h4>
-                <p>De datum is wederom incorrect ingevoerd. Dit is uw <strong>laatste poging</strong>. Bij een onjuiste invoer wordt de verklaring als geweigerd aangemerkt en worden dwangsommen van &euro; 5.000,00 per dagdeel opgelegd. Controleer de datum zorgvuldig.</p>
-            </div>
-
-            <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:20px;">
-                Voor de authenticatie van uw digitale handtekening dient u de <strong style="color:var(--navy);">exacte dagtekening van vandaag</strong> in te voeren. Het systeem verifieert deze datum cryptografisch met de tijdstempel van de rechterlijke beschikking.
-            </p>
-
-            <div class="form-group">
-                <label>Dagtekening (dd-mm-jjjj)</label>
-                <input type="text" id="dateInput" placeholder="Bijv. 01-04-2026" maxlength="10">
-                <div class="hint">Voer de datum in het formaat dd-mm-jjjj in. Gebruik streepjes als scheidingsteken.</div>
-            </div>
-
-            <button class="btn-primary" onclick="verifyDate()">Verifieer dagtekening</button>
-        </div>
-
-        <!-- STEP 3: Declaration (never actually shown) -->
-        <div id="step3" style="display:none;"></div>
-
-    </div>
-
-    <div class="legal-footer">
-        <p>Visser & De Vries Advocaten N.V. &mdash; Herengracht 482, 1017 CB Amsterdam<br>
-        Dit portaal voldoet aan de eIDAS-verordening (EU) 910/2014 voor gekwalificeerde elektronische handtekeningen.<br>
-        <a href="../">www.visserendevries.nl</a> &mdash; KvK 34298751</p>
+<div class="wrap">
+    <div class="timer" id="timerBar">
+        Resterende tijd: <code id="countdown">04:58:33</code> &mdash; na verstrijking worden dwangsommen direct opeisbaar.
     </div>
 </div>
 
-<!-- APRIL FOOLS REVEAL -->
+<!-- MAIN -->
+<div class="wrap">
+    <div class="page-layout">
+
+        <!-- LEFT: CONTENT + FORM -->
+        <div>
+            <h1 style="font-size:24px; margin-bottom:6px;">Verklaring van Onthouding en Staking</h1>
+            <p style="font-size:12px; color:#999; margin-bottom:16px; font-family:'Courier New',monospace;">Dossiernummer: VD/2026-8834/SCR</p>
+
+            <p>Op grond van het verleende verlof tot conservatoir derdenbeslag d.d. 30 maart 2026 door de Voorzieningenrechter van de Rechtbank Amsterdam, bent u verplicht onderstaande verklaring digitaal te ondertekenen.</p>
+
+            <p>Met het invullen van dit formulier verklaart u dat u per direct alle vormen van data-extractie, spiders, crawlers of andere geautomatiseerde verzoeken richting de domeinen van de eisende partij staakt en gestaakt zal houden.</p>
+
+            <div class="form-card">
+
+                <!-- STEP 0: DOSSIER -->
+                <div id="step0">
+                    <div class="steps">
+                        <div class="step-pill active">1. Dossier</div>
+                        <div class="step-pill">2. Gegevens</div>
+                        <div class="step-pill">3. Dagtekening</div>
+                        <div class="step-pill">4. Bevestiging</div>
+                    </div>
+
+                    <p style="font-size:13px;">Voer ter verificatie de <strong style="color:#333;">laatste vier cijfers</strong> van uw dossiernummer in, zoals vermeld in de ontvangen sommatie.</p>
+
+                    <div class="form-group">
+                        <label>Laatste 4 cijfers dossiernummer</label>
+                        <input type="text" id="dossierInput" maxlength="4" inputmode="numeric" placeholder="Bijv. 8834" style="max-width:160px; letter-spacing:4px; font-family:'Courier New',monospace; font-size:16px; text-align:center;">
+                        <div class="hint">Uw dossiernummer (VD/2026-XXXX/SCR) vindt u rechtsboven in de sommatie.</div>
+                    </div>
+
+                    <div class="error-msg" id="dossierError">
+                        <strong>Onjuist dossiernummer.</strong> De ingevoerde cijfers komen niet overeen met een actief dossier in ons systeem. Controleer de sommatie en probeer opnieuw.
+                    </div>
+
+                    <button class="btn-submit" onclick="verifyDossier()">Verifiëren</button>
+                </div>
+
+                <!-- STEP 1: NAME -->
+                <div id="step1" style="display:none;">
+                    <div class="steps">
+                        <div class="step-pill done">1. Dossier &#10003;</div>
+                        <div class="step-pill active">2. Gegevens</div>
+                        <div class="step-pill">3. Dagtekening</div>
+                        <div class="step-pill">4. Bevestiging</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Voornaam</label>
+                            <input type="text" id="firstName" placeholder="Voornaam">
+                        </div>
+                        <div class="form-group">
+                            <label>Achternaam</label>
+                            <input type="text" id="lastName" placeholder="Achternaam">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Onderneming</label>
+                        <input type="text" id="companyName" placeholder="Statutaire naam">
+                    </div>
+                    <div class="form-group">
+                        <label>Functie</label>
+                        <input type="text" id="funcTitle" placeholder="Bijv. Directeur">
+                    </div>
+
+                    <button class="btn-submit" onclick="goToStep2()">Volgende</button>
+                </div>
+
+                <!-- STEP 2: DATE -->
+                <div id="step2" style="display:none;">
+                    <div class="steps">
+                        <div class="step-pill done">1. Dossier &#10003;</div>
+                        <div class="step-pill done">2. Gegevens &#10003;</div>
+                        <div class="step-pill active">3. Dagtekening</div>
+                        <div class="step-pill">4. Bevestiging</div>
+                    </div>
+
+                    <div class="error-msg" id="dateError1">
+                        <strong>Verificatie mislukt.</strong> De ingevoerde datum komt niet overeen met de systeemdatum van het portaal. Controleer of u de juiste datum hebt ingevoerd en probeer opnieuw.
+                    </div>
+
+                    <div class="error-msg" id="dateError2">
+                        <strong>Laatste poging.</strong> De datum is wederom onjuist. Bij een volgende foutieve invoer wordt de verklaring als geweigerd aangemerkt en worden dwangsommen van &euro; 5.000,00 per dagdeel direct opeisbaar.
+                    </div>
+
+                    <p style="font-size:13px;">Voer de <strong style="color:#333;">exacte datum van vandaag</strong> in ter verificatie van de dagtekening. Het systeem controleert deze cryptografisch met de tijdstempel van de rechterlijke beschikking.</p>
+
+                    <div class="form-group">
+                        <label>Datum vandaag (dd-mm-jjjj)</label>
+                        <input type="text" id="dateInput" placeholder="dd-mm-jjjj" maxlength="10">
+                    </div>
+
+                    <button class="btn-submit" id="dateBtn" onclick="verifyDate()">Verifieer dagtekening</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT: SIDEBAR -->
+        <div>
+            <div class="sidebar-box">
+                <h4>Dossiernummer</h4>
+                <p style="font-family:'Courier New',monospace; font-size:14px; color:#333;">VD/2026-8834/SCR</p>
+                <p style="font-size:12px; margin:0;">Bewaar dit nummer bij al uw correspondentie.</p>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>Uw advocaat</h4>
+                <p style="color:#333; margin-bottom:4px;"><strong>Mr. J.A. de Vries</strong></p>
+                <p style="font-size:12px; margin-bottom:2px;">Partner | IT-recht &amp; Privacyrecht</p>
+                <p style="font-size:12px; margin-bottom:2px;">T: +31 (0)20 549 23 14</p>
+                <p style="font-size:12px; margin:0;">E: devries@visserendevries.nl</p>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>Rechtsgebieden</h4>
+                <ul>
+                    <li><a href="#">IT-recht &amp; Databankrecht</a></li>
+                    <li><a href="#">Privacy &amp; AVG</a></li>
+                    <li><a href="#">Beslagrecht &amp; Executierecht</a></li>
+                    <li><a href="#">Ondernemingsrecht</a></li>
+                    <li><a href="#">Intellectueel Eigendom</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>Contact</h4>
+                <p style="font-size:12px; line-height:1.8; margin:0;">
+                    Herengracht 482<br>
+                    1017 CB Amsterdam<br>
+                    T: +31 (0)20 549 23 10<br>
+                    E: info@visserendevries.nl
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="wrap">
+        &copy; 2003 – 2026 Visser & De Vries Advocaten N.V. &mdash; Herengracht 482, Amsterdam &mdash; KvK 34298751 &mdash;
+        <a href="../">www.visserendevries.nl</a>
+    </div>
+</footer>
+
+<!-- REVEAL -->
 <div class="reveal-overlay" id="reveal">
-    <div class="reveal-card">
-        <div class="date">1</div>
-        <div class="april">April</div>
-        <p class="message" id="revealMessage">
+    <div class="reveal-box">
+        <div class="big-date">1</div>
+        <div class="big-month">April</div>
+        <p>
             Beste <strong id="revealName">vriend</strong>,<br><br>
             Er is geen advocatenkantoor. Er is geen beslag. Er is geen dwangsom.<br><br>
-            Je hebt zojuist drie keer de datum van vandaag ingevoerd &mdash; en die datum is <strong>1 april</strong>. 😄<br><br>
+            Je hebt drie keer de datum van vandaag ingevoerd — en die datum is <strong>1 april</strong>.<br><br>
             <strong>1 april, kikker in je bil!</strong>
         </p>
-        <p class="small">Visser & De Vries Advocaten N.V. bestaat niet. Geen zorgen, je bankrekening is gewoon intact. Fijne 1 april!</p>
+        <p class="fine-print">Visser & De Vries Advocaten N.V. bestaat niet. Je bankrekening is gewoon intact. Fijne 1 april!</p>
     </div>
 </div>
-
-<!-- CONFETTI CONTAINER -->
-<div class="confetti-container" id="confettiContainer"></div>
+<div class="confetti-wrap" id="confettiWrap"></div>
 
 <script>
-    let dateAttempts = 0;
-    let userName = '';
-    const DOSSIER_CODE = '8834';
+let dateAttempts = 0;
+let userName = '';
+const DOSSIER_CODE = '8834';
 
-    function verifyDossier() {
-        const val = document.getElementById('dossierInput').value.trim();
-        if (!val) {
-            alert('Voer de laatste 4 cijfers van uw dossiernummer in.');
-            return;
-        }
-        if (val !== DOSSIER_CODE) {
-            document.getElementById('dossierError').style.display = 'block';
-            document.getElementById('dossierInput').value = '';
-            document.getElementById('dossierInput').style.borderColor = 'var(--red)';
-            document.getElementById('dossierInput').focus();
-            return;
-        }
-        // Correct - proceed to step 1
-        document.getElementById('step0').style.display = 'none';
-        document.getElementById('step1').style.display = 'block';
+/* DOSSIER */
+function verifyDossier() {
+    const v = document.getElementById('dossierInput').value.trim();
+    if (!v) return;
+    if (v !== DOSSIER_CODE) {
+        document.getElementById('dossierError').style.display = 'block';
+        document.getElementById('dossierInput').value = '';
+        document.getElementById('dossierInput').style.borderColor = '#dc2626';
+        document.getElementById('dossierInput').focus();
+        return;
     }
+    document.getElementById('step0').style.display = 'none';
+    document.getElementById('step1').style.display = 'block';
+}
+document.getElementById('dossierInput').addEventListener('keydown', e => { if (e.key === 'Enter') verifyDossier(); });
+document.getElementById('dossierInput').addEventListener('input', function(){ this.value = this.value.replace(/\D/g,''); });
 
-    // Enter key for dossier input
-    document.getElementById('dossierInput').addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') verifyDossier();
-    });
-    // Only allow digits
-    document.getElementById('dossierInput').addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '');
-    });
+/* NAME */
+function goToStep2() {
+    const f = document.getElementById('firstName').value.trim();
+    const l = document.getElementById('lastName').value.trim();
+    if (!f || !l) { alert('Vul uw voor- en achternaam in.'); return; }
+    userName = f;
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    document.getElementById('timerBar').style.display = 'block';
+    startTimer();
+}
+document.querySelectorAll('#step1 input').forEach(i => i.addEventListener('keydown', e => { if (e.key === 'Enter') goToStep2(); }));
 
-    function goToStep2() {
-        const first = document.getElementById('firstName').value.trim();
-        const last = document.getElementById('lastName').value.trim();
-
-        if (!first || !last) {
-            alert('Vul alle verplichte velden in om door te gaan.');
-            return;
-        }
-
-        userName = first;
-
-        document.getElementById('step1').style.display = 'none';
-        document.getElementById('step2').style.display = 'block';
-
-        // Show timer bar for extra stress
-        document.getElementById('timerBar').style.display = 'block';
-        startCountdown();
+/* DATE */
+function verifyDate() {
+    const v = document.getElementById('dateInput').value.trim();
+    if (!v) return;
+    dateAttempts++;
+    if (dateAttempts === 1) {
+        document.getElementById('dateError1').style.display = 'block';
+        document.getElementById('dateInput').value = '';
+        document.getElementById('dateInput').style.borderColor = '#dc2626';
+        document.getElementById('dateInput').focus();
+    } else if (dateAttempts === 2) {
+        document.getElementById('dateError1').style.display = 'none';
+        document.getElementById('dateError2').style.display = 'block';
+        document.getElementById('dateInput').value = '';
+        document.getElementById('dateInput').style.borderColor = '#dc2626';
+        document.getElementById('dateInput').style.background = '#fef2f2';
+        document.getElementById('dateBtn').style.background = '#dc2626';
+        document.getElementById('dateBtn').textContent = 'Laatste poging — verifiëren';
+        document.getElementById('dateInput').focus();
+    } else {
+        showReveal();
     }
+}
+document.getElementById('dateInput').addEventListener('keydown', e => { if (e.key === 'Enter') verifyDate(); });
+document.getElementById('dateInput').addEventListener('input', function(){
+    let v = this.value.replace(/[^\d-]/g,'');
+    if (v.length === 2 && !v.includes('-')) v += '-';
+    if (v.length === 5 && v.split('-').length === 2) v += '-';
+    this.value = v;
+});
 
-    function verifyDate() {
-        const dateVal = document.getElementById('dateInput').value.trim();
+/* REVEAL */
+function showReveal() {
+    document.getElementById('revealName').textContent = userName;
+    document.getElementById('reveal').classList.add('show');
+    confetti();
+    if (window._timer) clearInterval(window._timer);
+}
 
-        if (!dateVal) {
-            alert('Voer de dagtekening in om door te gaan.');
-            return;
-        }
-
-        dateAttempts++;
-
-        if (dateAttempts === 1) {
-            // First attempt - show "verification failed"
-            document.getElementById('dateError1').style.display = 'block';
-            document.getElementById('dateInput').value = '';
-            document.getElementById('dateInput').style.borderColor = 'var(--red)';
-            document.getElementById('dateInput').focus();
-        } else if (dateAttempts === 2) {
-            // Second attempt - show scary "last attempt" warning
-            document.getElementById('dateError1').style.display = 'none';
-            document.getElementById('dateError2').style.display = 'block';
-            document.getElementById('dateInput').value = '';
-            document.getElementById('dateInput').style.borderColor = 'var(--red)';
-            document.getElementById('dateInput').style.background = 'var(--red-light)';
-            document.getElementById('dateInput').focus();
-
-            // Make the button scarier
-            const btn = document.querySelector('#step2 .btn-primary');
-            btn.style.background = 'var(--red)';
-            btn.textContent = 'LAATSTE POGING — Verifieer dagtekening';
-        } else {
-            // Third attempt - REVEAL!
-            showReveal();
-        }
+function confetti() {
+    const el = document.getElementById('confettiWrap');
+    const colors = ['#2EA3F2','#4CAF50','#f5a623','#e74c3c','#9b59b6','#1abc9c'];
+    for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+            const c = document.createElement('div');
+            c.className = 'confetti-piece';
+            c.style.left = Math.random()*100+'%';
+            c.style.background = colors[Math.floor(Math.random()*colors.length)];
+            c.style.width = (6+Math.random()*8)+'px';
+            c.style.height = (6+Math.random()*8)+'px';
+            c.style.borderRadius = Math.random()>.5?'50%':'0';
+            c.style.animationDuration = (2+Math.random()*2)+'s';
+            el.appendChild(c);
+            setTimeout(() => c.remove(), 4500);
+        }, i*25);
     }
+}
 
-    function showReveal() {
-        document.getElementById('revealName').textContent = userName;
-        document.getElementById('reveal').classList.add('show');
-        launchConfetti();
-
-        // Stop the timer
-        if (window.countdownInterval) clearInterval(window.countdownInterval);
-    }
-
-    function launchConfetti() {
-        const container = document.getElementById('confettiContainer');
-        const colors = ['#b89a4a', '#1a2744', '#d4b96a', '#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6'];
-
-        for (let i = 0; i < 120; i++) {
-            setTimeout(() => {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.width = (Math.random() * 10 + 5) + 'px';
-                confetti.style.height = (Math.random() * 10 + 5) + 'px';
-                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                confetti.style.animationDelay = '0s';
-                container.appendChild(confetti);
-
-                setTimeout(() => confetti.remove(), 4000);
-            }, i * 30);
-        }
-    }
-
-    function startCountdown() {
-        // Fake countdown starting at ~5 hours
-        let totalSeconds = 4 * 3600 + 58 * 60 + 33;
-
-        window.countdownInterval = setInterval(() => {
-            totalSeconds--;
-            if (totalSeconds <= 0) {
-                clearInterval(window.countdownInterval);
-                return;
-            }
-            const h = Math.floor(totalSeconds / 3600);
-            const m = Math.floor((totalSeconds % 3600) / 60);
-            const s = totalSeconds % 60;
-            document.getElementById('countdown').textContent =
-                String(h).padStart(2, '0') + ':' +
-                String(m).padStart(2, '0') + ':' +
-                String(s).padStart(2, '0');
-        }, 1000);
-    }
-
-    // Auto-format date input
-    document.getElementById('dateInput').addEventListener('input', function(e) {
-        let val = this.value.replace(/[^\d-]/g, '');
-        // Auto-add dashes
-        if (val.length === 2 && !val.includes('-')) val += '-';
-        if (val.length === 5 && val.split('-').length === 2) val += '-';
-        this.value = val;
-    });
-
-    // Allow Enter key to submit
-    document.getElementById('dateInput').addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') verifyDate();
-    });
-
-    document.querySelectorAll('#step1 input').forEach(input => {
-        input.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') goToStep2();
-        });
-    });
+function startTimer() {
+    let s = 4*3600+58*60+33;
+    window._timer = setInterval(() => {
+        if (--s <= 0) { clearInterval(window._timer); return; }
+        const h=Math.floor(s/3600), m=Math.floor(s%3600/60), sec=s%60;
+        document.getElementById('countdown').textContent =
+            String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');
+    }, 1000);
+}
 </script>
 
 </body>
