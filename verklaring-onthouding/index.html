@@ -5,156 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verklaring van Onthouding en Staking | Visser & De Vries Advocaten N.V.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-            font-size: 14px;
-            color: #666;
-            line-height: 1.7em;
-            background: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 15px;
+            color: #4a4a4a;
+            line-height: 1.7;
+            background: #f8f8f6;
+            -webkit-font-smoothing: antialiased;
         }
-        a { color: #2EA3F2; text-decoration: none; }
-        a:hover { color: #1a8cd8; }
-        h1, h2, h3, h4 { color: #333; font-weight: 600; }
+        a { color: #1a2744; text-decoration: none; }
+        a:hover { color: #8b7340; }
+        h1, h2, h3, h4 { color: #1a2744; font-weight: 600; letter-spacing: -0.01em; }
         p { margin-bottom: 14px; }
 
-        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 30px; }
+        .wrap { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
 
-        /* HEADER */
-        .header {
-            background: #fff;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            padding: 15px 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        .header .wrap {
+        /* ── HEADER ── */
+        .site-header { background: #1a2744; }
+        .header-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 18px 0;
         }
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #333;
+            gap: 14px;
+            color: #fff;
         }
-        .logo img { height: 50px; }
+        .logo img { height: 46px; }
         .logo-text {
             font-size: 17px;
-            font-weight: 700;
-            color: #333;
-            line-height: 1.3;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.2;
         }
         .logo-text span {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 400;
-            color: #999;
+            color: rgba(255,255,255,0.5);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2.5px;
+            margin-top: 2px;
         }
         .header-right {
-            font-size: 12px;
-            color: #999;
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
             text-align: right;
         }
-        .header-right strong { color: #333; }
+        .header-right a { color: rgba(255,255,255,0.8); }
+        .header-right a:hover { color: #fff; }
+        .header-right strong { color: rgba(255,255,255,0.9); font-weight: 500; }
 
-        /* BREADCRUMB */
+        /* ── BREADCRUMB ── */
         .breadcrumb {
-            padding: 14px 0;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 12px 0;
             font-size: 12px;
             color: #999;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
         }
         .breadcrumb a { color: #999; }
-        .breadcrumb a:hover { color: #2EA3F2; }
+        .breadcrumb a:hover { color: #1a2744; }
 
-        /* WARNING BANNER */
+        /* ── NOTICE ── */
         .notice {
             background: #fff8e1;
-            border-left: 4px solid #f5a623;
+            border-left: 3px solid #c5a032;
             padding: 14px 20px;
             font-size: 13px;
             color: #7a5d00;
-            margin: 20px 0;
+            margin-top: 24px;
         }
         .notice strong { color: #5c4500; }
 
-        /* MAIN LAYOUT */
+        /* ── TIMER ── */
+        .timer {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 9px 18px;
+            font-size: 12px;
+            color: #991b1b;
+            text-align: center;
+            margin-top: 16px;
+            display: none;
+        }
+        .timer code { font-weight: 700; font-size: 14px; }
+
+        /* ── PAGE LAYOUT ── */
         .page-layout {
             display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 40px;
-            padding: 30px 0 60px;
+            grid-template-columns: 1fr 300px;
+            gap: 45px;
+            padding: 35px 0 70px;
         }
 
-        /* SIDEBAR */
+        /* ── SIDEBAR ── */
         .sidebar-box {
-            background: #f7f7f7;
+            background: #fff;
+            border: 1px solid #eee;
             padding: 22px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(0,0,0,0.06);
+            margin-bottom: 18px;
         }
         .sidebar-box h4 {
-            font-size: 14px;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #1a2744;
         }
-        .sidebar-box p { font-size: 13px; margin-bottom: 8px; }
+        .sidebar-box p { font-size: 13px; margin-bottom: 6px; color: #666; }
+        .sidebar-box p:last-child { margin-bottom: 0; }
+        .sidebar-box .mono { font-family: 'Courier New', monospace; font-size: 14px; color: #1a2744; font-weight: 600; }
         .sidebar-box ul { list-style: none; }
         .sidebar-box li {
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 7px 0;
+            border-bottom: 1px solid #f5f5f5;
             font-size: 13px;
         }
         .sidebar-box li:last-child { border-bottom: none; }
         .sidebar-box li a { color: #666; }
-        .sidebar-box li a:hover { color: #2EA3F2; }
+        .sidebar-box li a:hover { color: #8b7340; }
 
-        /* FORM AREA */
+        /* ── FORM ── */
         .form-card {
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            padding: 28px;
-            margin-top: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 30px;
+            margin-top: 24px;
         }
-        .form-group {
-            margin-bottom: 16px;
-        }
+        .form-group { margin-bottom: 16px; }
         .form-group label {
             display: block;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            color: #333;
+            color: #1a2744;
             margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .form-group input {
             width: 100%;
-            padding: 10px 12px;
+            padding: 10px 14px;
             border: 1px solid #ddd;
             font-family: inherit;
-            font-size: 13px;
+            font-size: 14px;
             outline: none;
-            background: #fff;
+            background: #fafafa;
             color: #333;
+            transition: border-color 0.15s;
         }
-        .form-group input:focus { border-color: #2EA3F2; }
-        .form-group .hint {
-            font-size: 11px;
-            color: #999;
-            margin-top: 4px;
-        }
+        .form-group input:focus { border-color: #8b7340; background: #fff; }
+        .form-group .hint { font-size: 11px; color: #aaa; margin-top: 4px; }
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
+
+        /* Steps */
+        .steps {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 22px;
+        }
+        .step-pill {
+            padding: 5px 14px;
+            font-size: 11px;
+            font-weight: 600;
+            background: #f0f0f0;
+            color: #aaa;
+            letter-spacing: 0.3px;
+        }
+        .step-pill.active { background: #1a2744; color: #fff; }
+        .step-pill.done { background: #2d6a4f; color: #fff; }
+
         .btn-submit {
-            background: #2EA3F2;
+            background: #1a2744;
             color: #fff;
             border: none;
             padding: 11px 28px;
@@ -162,28 +196,13 @@
             font-weight: 600;
             cursor: pointer;
             font-family: inherit;
-            margin-top: 6px;
+            letter-spacing: 0.3px;
             transition: background 0.2s;
+            margin-top: 6px;
         }
-        .btn-submit:hover { background: #1a8cd8; }
+        .btn-submit:hover { background: #243656; }
 
-        /* STEP INDICATOR */
-        .steps {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 18px;
-            font-size: 11px;
-        }
-        .step-pill {
-            padding: 4px 12px;
-            background: #e8e8e8;
-            color: #999;
-            font-weight: 600;
-        }
-        .step-pill.active { background: #2EA3F2; color: #fff; }
-        .step-pill.done { background: #4CAF50; color: #fff; }
-
-        /* ERROR */
+        /* Error */
         .error-msg {
             background: #fef2f2;
             border: 1px solid #fecaca;
@@ -196,28 +215,12 @@
         }
         .error-msg strong { color: #7f1d1d; }
 
-        /* TIMER */
-        .timer {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            padding: 8px 16px;
-            font-size: 12px;
-            color: #991b1b;
-            text-align: center;
-            margin-bottom: 20px;
-            display: none;
-        }
-        .timer code {
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* REVEAL OVERLAY */
+        /* ── REVEAL ── */
         .reveal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.75);
+            background: rgba(26,39,68,0.88);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -225,44 +228,40 @@
         .reveal-overlay.show { display: flex; }
         .reveal-box {
             background: #fff;
-            max-width: 480px;
+            max-width: 460px;
             width: 90%;
-            padding: 40px 35px;
+            padding: 45px 38px;
             text-align: center;
             animation: fadeUp 0.5s ease-out;
         }
         @keyframes fadeUp {
-            from { transform: translateY(30px); opacity: 0; }
+            from { transform: translateY(25px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
         .reveal-box .big-date {
-            font-size: 72px;
+            font-size: 80px;
             font-weight: 700;
-            color: #2EA3F2;
+            color: #1a2744;
             line-height: 1;
         }
         .reveal-box .big-month {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 700;
-            color: #333;
+            color: #8b7340;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
+            letter-spacing: 5px;
+            margin-bottom: 24px;
         }
-        .reveal-box p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.8;
-        }
-        .reveal-box p strong { color: #333; }
+        .reveal-box p { font-size: 15px; color: #666; line-height: 1.8; }
+        .reveal-box p strong { color: #1a2744; }
         .reveal-box .fine-print {
-            font-size: 11px;
+            font-size: 12px;
             color: #bbb;
-            margin-top: 20px;
+            margin-top: 22px;
             font-style: italic;
         }
 
-        /* CONFETTI */
+        /* Confetti */
         .confetti-wrap {
             position: fixed;
             top: 0; left: 0;
@@ -280,18 +279,19 @@
             to { transform: translateY(105vh) rotate(720deg); opacity: 0; }
         }
 
-        /* FOOTER */
+        /* ── FOOTER ── */
         footer {
-            background: #333;
-            color: #aaa;
-            padding: 25px 0;
+            background: #141e30;
+            color: rgba(255,255,255,0.4);
+            padding: 22px 0;
             font-size: 12px;
             text-align: center;
         }
-        footer a { color: #aaa; }
-        footer a:hover { color: #2EA3F2; }
+        footer a { color: rgba(255,255,255,0.4); }
+        footer a:hover { color: rgba(255,255,255,0.7); }
 
         @media (max-width: 768px) {
+            .wrap { padding: 0 20px; }
             .page-layout { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .header-right { display: none; }
@@ -301,35 +301,33 @@
 <body>
 
 <!-- HEADER -->
-<div class="header">
+<header class="site-header">
     <div class="wrap">
-        <a href="../" class="logo">
-            <img src="../logo.png" alt="Visser & De Vries Advocaten">
-            <div class="logo-text">Visser & De Vries <span>Advocaten N.V.</span></div>
-        </a>
-        <div class="header-right">
-            <strong>T:</strong> +31 (0)20 549 23 10<br>
-            <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
+        <div class="header-inner">
+            <a href="../" class="logo">
+                <img src="../logo.png" alt="Visser & De Vries Advocaten">
+                <div class="logo-text">Visser & De Vries <span>Advocaten N.V.</span></div>
+            </a>
+            <div class="header-right">
+                <strong>+31 (0)20 549 23 10</strong><br>
+                <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
+            </div>
         </div>
     </div>
-</div>
+</header>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
     <div class="wrap">
-        <a href="../">Home</a> &rsaquo; <a href="#">Cliëntportaal</a> &rsaquo; Verklaring van Onthouding en Staking
+        <a href="../">Home</a> &rsaquo; <a href="#">Cli&euml;ntportaal</a> &rsaquo; Verklaring van Onthouding en Staking
     </div>
 </div>
 
-<!-- WARNING -->
+<!-- NOTICE + TIMER -->
 <div class="wrap">
     <div class="notice">
         <strong>Let op:</strong> Invulling van dit formulier is verplicht op grond van de rechterlijke beschikking d.d. 30 maart 2026. Niet-nakoming leidt tot opeisbare dwangsommen van &euro; 5.000,00 per dagdeel.
     </div>
-</div>
-
-<!-- TIMER -->
-<div class="wrap">
     <div class="timer" id="timerBar">
         Resterende tijd: <code id="countdown">04:58:33</code> &mdash; na verstrijking worden dwangsommen direct opeisbaar.
     </div>
@@ -339,14 +337,14 @@
 <div class="wrap">
     <div class="page-layout">
 
-        <!-- LEFT: CONTENT + FORM -->
+        <!-- LEFT: CONTENT -->
         <div>
-            <h1 style="font-size:24px; margin-bottom:6px;">Verklaring van Onthouding en Staking</h1>
-            <p style="font-size:12px; color:#999; margin-bottom:16px; font-family:'Courier New',monospace;">Dossiernummer: VD/2026-8834/SCR</p>
+            <h1 style="font-size:22px; margin: 24px 0 4px;">Verklaring van Onthouding en Staking</h1>
+            <p style="font-size:12px; color:#aaa; margin-bottom:18px; font-family:'Courier New',monospace;">Dossiernummer: VD/2026-8834/SCR</p>
 
             <p>Op grond van het verleende verlof tot conservatoir derdenbeslag d.d. 30 maart 2026 door de Voorzieningenrechter van de Rechtbank Amsterdam, bent u verplicht onderstaande verklaring digitaal te ondertekenen.</p>
 
-            <p>Met het invullen van dit formulier verklaart u dat u per direct alle vormen van data-extractie, spiders, crawlers of andere geautomatiseerde verzoeken richting de domeinen van de eisende partij staakt en gestaakt zal houden.</p>
+            <p style="font-size:14px; color:#666;">Met het invullen van dit formulier verklaart u dat u per direct alle vormen van data-extractie, spiders, crawlers of andere geautomatiseerde verzoeken richting de domeinen van de eisende partij staakt en gestaakt zal houden.</p>
 
             <div class="form-card">
 
@@ -359,19 +357,19 @@
                         <div class="step-pill">4. Bevestiging</div>
                     </div>
 
-                    <p style="font-size:13px;">Voer ter verificatie de <strong style="color:#333;">laatste vier cijfers</strong> van uw dossiernummer in, zoals vermeld in de ontvangen sommatie.</p>
+                    <p style="font-size:14px;">Voer ter verificatie de <strong style="color:#1a2744;">laatste vier cijfers</strong> van uw dossiernummer in, zoals vermeld in de ontvangen sommatie.</p>
 
                     <div class="form-group">
                         <label>Laatste 4 cijfers dossiernummer</label>
-                        <input type="text" id="dossierInput" maxlength="4" inputmode="numeric" placeholder="Bijv. 8834" style="max-width:160px; letter-spacing:4px; font-family:'Courier New',monospace; font-size:16px; text-align:center;">
+                        <input type="text" id="dossierInput" maxlength="4" inputmode="numeric" placeholder="bijv. 8834" style="max-width:160px; letter-spacing:4px; font-family:'Courier New',monospace; font-size:16px; text-align:center;">
                         <div class="hint">Uw dossiernummer (VD/2026-XXXX/SCR) vindt u rechtsboven in de sommatie.</div>
                     </div>
 
                     <div class="error-msg" id="dossierError">
-                        <strong>Onjuist dossiernummer.</strong> De ingevoerde cijfers komen niet overeen met een actief dossier in ons systeem. Controleer de sommatie en probeer opnieuw.
+                        <strong>Onjuist dossiernummer.</strong> De ingevoerde cijfers komen niet overeen met een actief dossier. Controleer de sommatie en probeer opnieuw.
                     </div>
 
-                    <button class="btn-submit" onclick="verifyDossier()">Verifiëren</button>
+                    <button class="btn-submit" onclick="verifyDossier()">Verifi&euml;ren</button>
                 </div>
 
                 <!-- STEP 1: NAME -->
@@ -422,7 +420,7 @@
                         <strong>Laatste poging.</strong> De datum is wederom onjuist. Bij een volgende foutieve invoer wordt de verklaring als geweigerd aangemerkt en worden dwangsommen van &euro; 5.000,00 per dagdeel direct opeisbaar.
                     </div>
 
-                    <p style="font-size:13px;">Voer de <strong style="color:#333;">exacte datum van vandaag</strong> in ter verificatie van de dagtekening. Het systeem controleert deze cryptografisch met de tijdstempel van de rechterlijke beschikking.</p>
+                    <p style="font-size:14px;">Voer de <strong style="color:#1a2744;">exacte datum van vandaag</strong> in ter verificatie van de dagtekening. Het systeem controleert deze cryptografisch met de tijdstempel van de rechterlijke beschikking.</p>
 
                     <div class="form-group">
                         <label>Datum vandaag (dd-mm-jjjj)</label>
@@ -439,16 +437,16 @@
         <div>
             <div class="sidebar-box">
                 <h4>Dossiernummer</h4>
-                <p style="font-family:'Courier New',monospace; font-size:14px; color:#333;">VD/2026-8834/SCR</p>
-                <p style="font-size:12px; margin:0;">Bewaar dit nummer bij al uw correspondentie.</p>
+                <p class="mono">VD/2026-8834/SCR</p>
+                <p style="font-size:11px; color:#aaa; margin:0;">Vermeld dit nummer bij alle correspondentie.</p>
             </div>
 
             <div class="sidebar-box">
                 <h4>Uw advocaat</h4>
-                <p style="color:#333; margin-bottom:4px;"><strong>Mr. J.A. de Vries</strong></p>
+                <p style="color:#1a2744; margin-bottom:4px;"><strong>Mr. J.A. de Vries</strong></p>
                 <p style="font-size:12px; margin-bottom:2px;">Partner | IT-recht &amp; Privacyrecht</p>
                 <p style="font-size:12px; margin-bottom:2px;">T: +31 (0)20 549 23 14</p>
-                <p style="font-size:12px; margin:0;">E: devries@visserendevries.nl</p>
+                <p style="font-size:12px;">E: devries@visserendevries.nl</p>
             </div>
 
             <div class="sidebar-box">
@@ -464,11 +462,11 @@
 
             <div class="sidebar-box">
                 <h4>Contact</h4>
-                <p style="font-size:12px; line-height:1.8; margin:0;">
+                <p style="font-size:12px; line-height:1.9;">
                     Herengracht 482<br>
                     1017 CB Amsterdam<br>
-                    T: +31 (0)20 549 23 10<br>
-                    E: info@visserendevries.nl
+                    +31 (0)20 549 23 10<br>
+                    info@visserendevries.nl
                 </p>
             </div>
         </div>
@@ -505,7 +503,6 @@ let dateAttempts = 0;
 let userName = '';
 const DOSSIER_CODE = '8834';
 
-/* DOSSIER */
 function verifyDossier() {
     const v = document.getElementById('dossierInput').value.trim();
     if (!v) return;
@@ -522,7 +519,6 @@ function verifyDossier() {
 document.getElementById('dossierInput').addEventListener('keydown', e => { if (e.key === 'Enter') verifyDossier(); });
 document.getElementById('dossierInput').addEventListener('input', function(){ this.value = this.value.replace(/\D/g,''); });
 
-/* NAME */
 function goToStep2() {
     const f = document.getElementById('firstName').value.trim();
     const l = document.getElementById('lastName').value.trim();
@@ -535,7 +531,6 @@ function goToStep2() {
 }
 document.querySelectorAll('#step1 input').forEach(i => i.addEventListener('keydown', e => { if (e.key === 'Enter') goToStep2(); }));
 
-/* DATE */
 function verifyDate() {
     const v = document.getElementById('dateInput').value.trim();
     if (!v) return;
@@ -552,7 +547,7 @@ function verifyDate() {
         document.getElementById('dateInput').style.borderColor = '#dc2626';
         document.getElementById('dateInput').style.background = '#fef2f2';
         document.getElementById('dateBtn').style.background = '#dc2626';
-        document.getElementById('dateBtn').textContent = 'Laatste poging — verifiëren';
+        document.getElementById('dateBtn').textContent = 'Laatste poging \u2014 verifi\u00ebren';
         document.getElementById('dateInput').focus();
     } else {
         showReveal();
@@ -566,7 +561,6 @@ document.getElementById('dateInput').addEventListener('input', function(){
     this.value = v;
 });
 
-/* REVEAL */
 function showReveal() {
     document.getElementById('revealName').textContent = userName;
     document.getElementById('reveal').classList.add('show');
@@ -576,7 +570,7 @@ function showReveal() {
 
 function confetti() {
     const el = document.getElementById('confettiWrap');
-    const colors = ['#2EA3F2','#4CAF50','#f5a623','#e74c3c','#9b59b6','#1abc9c'];
+    const colors = ['#1a2744','#8b7340','#c5a032','#2d6a4f','#dc2626','#4a90d9'];
     for (let i = 0; i < 100; i++) {
         setTimeout(() => {
             const c = document.createElement('div');

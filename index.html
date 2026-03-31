@@ -5,279 +5,361 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visser & De Vries Advocaten N.V. | IT-recht & Privacyrecht Amsterdam</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-            font-size: 14px;
-            color: #666;
-            line-height: 1.7em;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 15px;
+            color: #4a4a4a;
+            line-height: 1.7;
             background: #fff;
+            -webkit-font-smoothing: antialiased;
         }
-        a { color: #2EA3F2; text-decoration: none; }
-        a:hover { color: #1a8cd8; }
-        h1, h2, h3, h4 { color: #333; font-weight: 600; }
-        h1 { font-size: 26px; margin-bottom: 12px; }
-        h2 { font-size: 22px; margin-bottom: 10px; }
-        h3 { font-size: 18px; margin-bottom: 8px; }
-        p { margin-bottom: 14px; }
+        a { color: #1a2744; text-decoration: none; }
+        a:hover { color: #8b7340; }
+        h1, h2, h3, h4 { color: #1a2744; font-weight: 600; letter-spacing: -0.01em; }
+        p { margin-bottom: 16px; }
 
-        /* TOP BAR */
-        .topbar {
-            background: #333;
-            color: #aaa;
-            font-size: 12px;
-            padding: 6px 0;
-        }
-        .topbar .wrap {
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-        .topbar a { color: #ccc; }
-        .topbar a:hover { color: #fff; }
+        .wrap { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
 
-        /* HEADER */
-        .header {
-            background: #fff;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        /* ── HEADER ── */
+        .site-header {
+            background: #1a2744;
+            position: relative;
         }
-        .header .wrap {
+        .header-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 20px 0;
         }
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
-        .logo img { height: 55px; }
+        .logo img { height: 52px; }
         .logo-text {
-            font-size: 18px;
-            font-weight: 700;
-            color: #333;
-            line-height: 1.3;
+            color: #fff;
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
         }
         .logo-text span {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 400;
-            color: #999;
+            color: rgba(255,255,255,0.5);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2.5px;
+            margin-top: 2px;
         }
-        nav ul {
+        .header-contact {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            text-align: right;
+        }
+        .header-contact a { color: rgba(255,255,255,0.8); }
+        .header-contact a:hover { color: #fff; }
+        .header-contact strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+        /* NAV */
+        .nav-bar {
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-bar ul {
             list-style: none;
             display: flex;
             gap: 0;
         }
-        nav li { position: relative; }
-        nav a {
+        .nav-bar li { position: relative; }
+        .nav-bar a {
             display: block;
-            padding: 10px 16px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            transition: color 0.2s;
+            padding: 13px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.75);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: color 0.15s;
         }
-        nav a:hover { color: #2EA3F2; }
-        nav .dropdown-content {
+        .nav-bar a:hover { color: #fff; }
+        .nav-bar .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
             background: #fff;
-            border: 1px solid rgba(0,0,0,0.1);
-            min-width: 240px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            min-width: 260px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
             z-index: 50;
+            border-top: 2px solid #8b7340;
         }
-        nav .dropdown:hover .dropdown-content { display: block; }
-        nav .dropdown-content a {
-            padding: 10px 18px;
-            font-weight: 400;
+        .nav-bar .dropdown:hover .dropdown-menu { display: block; }
+        .nav-bar .dropdown-menu a {
+            padding: 11px 20px;
             font-size: 13px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #4a4a4a;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+            border-bottom: 1px solid #f0f0f0;
         }
-        nav .dropdown-content a:hover { background: #f8f8f8; }
+        .nav-bar .dropdown-menu a:hover { background: #fafafa; color: #1a2744; }
 
-        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 30px; }
-
-        /* HERO */
+        /* ── HERO ── */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400"><rect fill="%231a2744" width="1200" height="400"/></svg>');
-            background-size: cover;
-            background-position: center;
-            padding: 60px 0;
-            color: #fff;
+            background: #1a2744;
+            padding: 70px 0 65px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139,115,64,0.08) 0%, transparent 60%);
         }
         .hero h1 {
             color: #fff;
-            font-size: 30px;
-            font-weight: 700;
-            margin-bottom: 14px;
+            font-size: 34px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 18px;
+            max-width: 560px;
         }
         .hero p {
+            color: rgba(255,255,255,0.7);
             font-size: 16px;
-            line-height: 1.7;
-            max-width: 600px;
-            color: rgba(255,255,255,0.9);
+            max-width: 520px;
+            line-height: 1.8;
+            margin: 0;
         }
 
-        /* CONTENT */
-        .content-section {
-            padding: 50px 0;
+        /* ── RECHTSGEBIEDEN ── */
+        .section { padding: 65px 0; }
+        .section-gray { background: #f8f8f6; }
+
+        .section-head {
+            margin-bottom: 35px;
         }
-        .content-grid {
+        .section-head h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .section-head p { color: #777; margin: 0; }
+        .section-head::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #8b7340;
+            margin-top: 14px;
+        }
+
+        .grid-3 {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #e8e6e1;
+            border: 1px solid #e8e6e1;
         }
-        .card {
-            padding: 25px;
-            border: 1px solid rgba(0,0,0,0.1);
-            transition: border-color 0.2s;
+        .grid-3 .item {
+            background: #fff;
+            padding: 30px 28px;
         }
-        .card:hover { border-color: #2EA3F2; }
-        .card h3 { font-size: 16px; margin-bottom: 10px; }
-        .card p { font-size: 13px; color: #888; margin-bottom: 0; }
+        .section-gray .grid-3 .item { background: #fff; }
+        .grid-3 .item h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .grid-3 .item p {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+            line-height: 1.7;
+        }
 
-        /* INTRO TEXT */
-        .intro {
-            padding: 50px 0 30px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-        .intro .cols {
+        /* ── KANTOOR ── */
+        .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
+            align-items: start;
         }
+        .two-col h2 { font-size: 24px; margin-bottom: 16px; }
+        .two-col h3 { font-size: 17px; margin-bottom: 14px; }
+        .two-col ul {
+            padding-left: 20px;
+            color: #666;
+        }
+        .two-col li { margin-bottom: 8px; font-size: 14px; }
 
-        /* TEAM */
-        .team-photo-section { max-width: 800px; }
-        .team-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(100%);
+        /* ── CTA ── */
+        .cta {
+            background: #1a2744;
+            padding: 40px 0;
         }
-        .team-caption {
-            padding: 14px 0;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            margin-top: 2px;
-        }
-        .team-caption p { font-size: 13px; color: #888; margin: 0; }
-
-        /* CTA */
-        .cta-bar {
-            background: #2EA3F2;
-            color: #fff;
-            padding: 35px 0;
-        }
-        .cta-bar .wrap {
+        .cta .wrap {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .cta-bar h2 { color: #fff; font-size: 20px; margin: 0; }
-        .cta-bar p { color: rgba(255,255,255,0.85); margin: 0; }
-        .btn {
+        .cta h3 { color: #fff; font-size: 19px; margin: 0 0 4px; }
+        .cta p { color: rgba(255,255,255,0.6); margin: 0; font-size: 14px; }
+        .cta-btn {
             display: inline-block;
-            padding: 12px 28px;
-            background: #fff;
-            color: #2EA3F2;
-            font-weight: 600;
-            font-size: 14px;
-            border: 2px solid #fff;
+            padding: 12px 30px;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
             transition: all 0.2s;
         }
-        .btn:hover {
-            background: transparent;
-            color: #fff;
+        .cta-btn:hover {
+            background: #fff;
+            color: #1a2744;
+            border-color: #fff;
         }
 
-        /* FOOTER */
+        /* ── TEAM ── */
+        .team-photo-wrap {
+            max-width: 780px;
+        }
+        .team-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .team-caption {
+            padding: 16px 0;
+        }
+        .team-caption p { font-size: 13px; color: #999; margin: 0; }
+
+        /* ── CONTACT ── */
+        .contact-info strong { color: #1a2744; display: block; margin-bottom: 4px; }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            font-size: 14px;
+            margin-bottom: 12px;
+            outline: none;
+            background: #fafafa;
+            transition: border-color 0.15s;
+        }
+        input:focus, textarea:focus { border-color: #8b7340; background: #fff; }
+        textarea { height: 110px; resize: vertical; }
+        .btn-send {
+            background: #1a2744;
+            color: #fff;
+            border: none;
+            padding: 11px 28px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            letter-spacing: 0.3px;
+            transition: background 0.2s;
+        }
+        .btn-send:hover { background: #243656; }
+
+        /* ── FOOTER ── */
         footer {
-            background: #333;
-            color: #aaa;
-            padding: 40px 0 20px;
+            background: #141e30;
+            color: rgba(255,255,255,0.45);
+            padding: 45px 0 25px;
             font-size: 13px;
         }
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 40px;
+            margin-bottom: 35px;
         }
         .footer-grid h4 {
-            color: #fff;
-            font-size: 14px;
-            margin-bottom: 12px;
+            color: rgba(255,255,255,0.85);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            font-weight: 600;
         }
+        .footer-grid p { line-height: 1.9; }
         .footer-grid ul { list-style: none; }
-        .footer-grid li { margin-bottom: 6px; }
-        .footer-grid a { color: #aaa; font-size: 13px; }
-        .footer-grid a:hover { color: #2EA3F2; }
-        .footer-grid p { line-height: 1.8; }
+        .footer-grid li { margin-bottom: 7px; }
+        .footer-grid a { color: rgba(255,255,255,0.45); }
+        .footer-grid a:hover { color: rgba(255,255,255,0.8); }
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 18px;
-            font-size: 12px;
-            color: #777;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 20px;
             display: flex;
             justify-content: space-between;
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
         }
 
-        /* MOBILE */
-        .menu-toggle { display: none; cursor: pointer; font-size: 24px; color: #333; background: none; border: none; }
+        /* ── MOBILE ── */
+        .menu-toggle { display: none; cursor: pointer; font-size: 22px; color: rgba(255,255,255,0.8); background: none; border: none; padding: 10px; }
         @media (max-width: 980px) {
+            .wrap { padding: 0 24px; }
             .menu-toggle { display: block; }
-            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; right: 0; background: #fff; border: 1px solid rgba(0,0,0,0.1); width: 260px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-            nav ul.open { display: flex; }
-            nav .dropdown-content { position: static; box-shadow: none; border: none; }
-            nav .dropdown-content a { padding-left: 30px; }
-            .content-grid, .team-row { grid-template-columns: 1fr; }
-            .intro .cols { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .cta-bar .wrap { flex-direction: column; gap: 16px; text-align: center; }
-            .hero h1 { font-size: 24px; }
+            .nav-bar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: #1a2744;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                z-index: 50;
+            }
+            .nav-bar ul.open { display: flex; }
+            .nav-bar .dropdown-menu { position: static; box-shadow: none; border-top: none; }
+            .nav-bar .dropdown-menu a { padding-left: 36px; color: rgba(255,255,255,0.5); }
+            .grid-3 { grid-template-columns: 1fr; }
+            .two-col { grid-template-columns: 1fr; gap: 30px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .cta .wrap { flex-direction: column; gap: 18px; text-align: center; }
+            .hero h1 { font-size: 26px; }
+            .header-contact { display: none; }
         }
     </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-    <div class="wrap">
-        <span>T: +31 (0)20 549 23 10</span>
-        <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
-    </div>
-</div>
-
 <!-- HEADER -->
-<div class="header">
+<header class="site-header">
     <div class="wrap">
-        <a href="/" class="logo">
-            <img src="logo.png" alt="Visser & De Vries Advocaten">
-            <div class="logo-text">
-                Visser & De Vries
-                <span>Advocaten N.V.</span>
+        <div class="header-top">
+            <a href="/" class="logo">
+                <img src="logo.png" alt="Visser & De Vries Advocaten">
+                <div class="logo-text">
+                    Visser & De Vries
+                    <span>Advocaten N.V.</span>
+                </div>
+            </a>
+            <div class="header-contact">
+                <strong>+31 (0)20 549 23 10</strong>
+                <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
             </div>
-        </a>
-        <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">&#9776;</button>
-        <nav>
+        </div>
+    </div>
+    <nav class="nav-bar">
+        <div class="wrap" style="display:flex; justify-content:space-between; align-items:center;">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
                     <a href="#">Rechtsgebieden &#9662;</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-menu">
                         <a href="#">IT-recht &amp; Databankrecht</a>
                         <a href="#">Privacy &amp; AVG</a>
                         <a href="#">Ondernemingsrecht</a>
@@ -290,65 +372,69 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </div>
-</div>
+            <button class="menu-toggle" onclick="document.querySelector('.nav-bar ul').classList.toggle('open')">&#9776;</button>
+        </div>
+    </nav>
+</header>
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
     <div class="wrap">
-        <h1>Gespecialiseerd in IT-recht,<br>Privacyrecht &amp; Procesvoering</h1>
-        <p>Wordt u geconfronteerd met een datalek, ongeautoriseerde data-extractie of een geschil rondom databankrechten? Onze advocaten helpen u graag.</p>
+        <h1>Gespecialiseerd in IT-recht, Privacyrecht &amp; Procesvoering</h1>
+        <p>Wordt u geconfronteerd met een datalek, ongeautoriseerde data-extractie of een geschil rondom databankrechten? Wij adviseren en procederen voor ondernemingen in complexe technologiegeschillen.</p>
     </div>
-</div>
+</section>
 
 <!-- RECHTSGEBIEDEN -->
-<div class="content-section">
+<section class="section section-gray">
     <div class="wrap">
-        <h2>Rechtsgebieden</h2>
-        <p>Visser & De Vries is gespecialiseerd in een aantal rechtsgebieden op het snijvlak van technologie en onderneming.</p>
-        <br>
-        <div class="content-grid">
-            <div class="card">
+        <div class="section-head">
+            <h2>Rechtsgebieden</h2>
+            <p>Visser & De Vries is gespecialiseerd in een aantal rechtsgebieden op het snijvlak van technologie en onderneming.</p>
+        </div>
+        <div class="grid-3">
+            <div class="item">
                 <h3>IT-recht &amp; Databankrecht</h3>
                 <p>Handhaving van databankrechten, bestrijding van ongeautoriseerde data-extractie (scraping), SaaS-geschillen en softwarelicenties.</p>
             </div>
-            <div class="card">
+            <div class="item">
                 <h3>Privacy &amp; AVG</h3>
                 <p>AVG-compliance, verwerkersovereenkomsten, DPIA's en bijstand bij handhavingsbesluiten van de Autoriteit Persoonsgegevens.</p>
             </div>
-            <div class="card">
+            <div class="item">
                 <h3>Ondernemingsrecht</h3>
                 <p>Aandeelhoudersgeschillen, bestuurdersaansprakelijkheid, herstructureringen en vennootschapsrechtelijk advies.</p>
             </div>
-            <div class="card">
+            <div class="item">
                 <h3>Intellectueel Eigendom</h3>
                 <p>Bescherming en handhaving van merken, auteursrechten en octrooien. Ervaring met grensoverschrijdende IP-geschillen.</p>
             </div>
-            <div class="card">
+            <div class="item">
                 <h3>Beslagrecht &amp; Executierecht</h3>
                 <p>Conservatoir en executoriaal beslag, opheffingsprocedures, kort gedingen en executiegeschillen.</p>
             </div>
-            <div class="card">
-                <h3>Cybersecurity</h3>
+            <div class="item">
+                <h3>Cybersecurity &amp; Compliance</h3>
                 <p>Incident response, NIS2-compliance, forensisch IT-onderzoek en contractuele cybersecurity-verplichtingen.</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<!-- OVER HET KANTOOR -->
-<div class="intro" id="kantoor">
+<!-- KANTOOR -->
+<section class="section" id="kantoor">
     <div class="wrap">
-        <div class="cols">
+        <div class="two-col">
             <div>
-                <h2>Over het kantoor</h2>
-                <p>Visser & De Vries Advocaten werd in 2003 opgericht door mr. H.W. Visser en mr. J.A. de Vries. Vanuit onze overtuiging dat cliënten gebaat zijn bij persoonlijke betrokkenheid en diepgaande specialisatie, bouwden wij een kantoor dat zich onderscheidt door kennis en bereikbaarheid.</p>
+                <div class="section-head">
+                    <h2>Over het kantoor</h2>
+                </div>
+                <p>Visser & De Vries Advocaten werd in 2003 opgericht door mr. H.W. Visser en mr. J.A. de Vries, beide afkomstig van gerenommeerde Zuidas-kantoren. Vanuit de overtuiging dat cliënten gebaat zijn bij persoonlijke betrokkenheid en diepgaande specialisatie, bouwden zij een kantoor dat zich onderscheidt door kennis en bereikbaarheid.</p>
                 <p>Ons kantoor is gevestigd aan de Herengracht in Amsterdam. Wij bedienen zowel nationale als internationale cliënten, van middelgrote ondernemingen tot beursgenoteerde bedrijven.</p>
             </div>
             <div>
                 <h3>Waarom Visser &amp; De Vries?</h3>
-                <ul style="color:#666; padding-left:18px;">
+                <ul>
                     <li>Meer dan 20 jaar ervaring in IT- en privacyrecht</li>
                     <li>Korte lijnen en persoonlijke betrokkenheid</li>
                     <li>Resultaatgerichte aanpak</li>
@@ -358,70 +444,80 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- CTA -->
-<div class="cta-bar">
+<div class="cta">
     <div class="wrap">
         <div>
-            <h2>Vrijblijvend gesprek?</h2>
-            <p>Neem contact op voor een eerste oriënterend gesprek. Wij denken graag met u mee.</p>
+            <h3>Vrijblijvend gesprek?</h3>
+            <p>Neem contact op voor een eerste oriënterend gesprek.</p>
         </div>
-        <a href="#contact" class="btn">Neem contact op</a>
+        <a href="#contact" class="cta-btn">Neem contact op</a>
     </div>
 </div>
 
 <!-- TEAM -->
-<div class="content-section" id="team">
+<section class="section section-gray" id="team">
     <div class="wrap">
-        <h2>Ons team</h2>
-        <p>Onze advocaten zijn stuk voor stuk specialisten op hun vakgebied.</p>
-        <br>
-        <div class="team-photo-section">
+        <div class="section-head">
+            <h2>Ons team</h2>
+        </div>
+        <div class="team-photo-wrap">
             <img src="team.jpg" alt="Het team van Visser & De Vries Advocaten" class="team-img">
             <div class="team-caption">
                 <p><strong>V.l.n.r.:</strong> Mr. S.M. Kleijberg (Senior Advocaat – IE-recht &amp; Procesvoering), Mr. H.W. Visser (Managing Partner – Ondernemingsrecht) en Mr. J.A. de Vries (Partner – IT-recht &amp; Privacyrecht)</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div class="intro" id="contact">
+<section class="section" id="contact">
     <div class="wrap">
-        <div class="cols">
+        <div class="two-col">
             <div>
-                <h2>Contact</h2>
-                <p>
-                    <strong>Visser & De Vries Advocaten N.V.</strong><br>
-                    Herengracht 482<br>
-                    1017 CB Amsterdam<br><br>
-                    T: +31 (0)20 549 23 10<br>
-                    E: <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a><br><br>
-                    Maandag t/m vrijdag: 08:30 – 18:00<br>
-                    Op afspraak ook buiten kantooruren beschikbaar.
-                </p>
+                <div class="section-head">
+                    <h2>Contact</h2>
+                </div>
+                <div class="contact-info">
+                    <p>
+                        <strong>Visser & De Vries Advocaten N.V.</strong>
+                        Herengracht 482<br>
+                        1017 CB Amsterdam
+                    </p>
+                    <p>
+                        <strong>Bereikbaarheid</strong>
+                        T: +31 (0)20 549 23 10<br>
+                        E: <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
+                    </p>
+                    <p>
+                        <strong>Openingstijden</strong>
+                        Maandag t/m vrijdag: 08:30 – 18:00<br>
+                        Op afspraak ook buiten kantooruren.
+                    </p>
+                </div>
             </div>
             <div>
                 <h3>Stuur ons een bericht</h3>
-                <form onsubmit="return false;" style="margin-top:10px;">
-                    <input type="text" placeholder="Naam" style="width:100%;padding:10px 12px;border:1px solid #ddd;font-family:inherit;font-size:13px;margin-bottom:10px;outline:none;">
-                    <input type="email" placeholder="E-mailadres" style="width:100%;padding:10px 12px;border:1px solid #ddd;font-family:inherit;font-size:13px;margin-bottom:10px;outline:none;">
-                    <input type="text" placeholder="Onderwerp" style="width:100%;padding:10px 12px;border:1px solid #ddd;font-family:inherit;font-size:13px;margin-bottom:10px;outline:none;">
-                    <textarea placeholder="Uw bericht" style="width:100%;padding:10px 12px;border:1px solid #ddd;font-family:inherit;font-size:13px;margin-bottom:10px;height:100px;resize:vertical;outline:none;"></textarea>
-                    <button type="submit" style="background:#2EA3F2;color:#fff;border:none;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">Verzenden</button>
+                <form onsubmit="return false;" style="margin-top:14px;">
+                    <input type="text" placeholder="Naam">
+                    <input type="email" placeholder="E-mailadres">
+                    <input type="text" placeholder="Onderwerp">
+                    <textarea placeholder="Uw bericht"></textarea>
+                    <button type="submit" class="btn-send">Verzenden</button>
                 </form>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
     <div class="wrap">
         <div class="footer-grid">
             <div>
-                <h4>Visser & De Vries Advocaten N.V.</h4>
+                <h4>Visser & De Vries</h4>
                 <p>Alle advocaten zijn ingeschreven bij de Nederlandse Orde van Advocaten. Op onze dienstverlening zijn onze Algemene Voorwaarden van toepassing, welke een aansprakelijkheidsbeperking bevatten.</p>
             </div>
             <div>
@@ -446,9 +542,9 @@
                 <h4>Contact</h4>
                 <p>
                     Herengracht 482<br>
-                    1017 CB Amsterdam<br>
-                    T: +31 (0)20 549 23 10<br>
-                    E: info@visserendevries.nl
+                    1017 CB Amsterdam<br><br>
+                    +31 (0)20 549 23 10<br>
+                    info@visserendevries.nl
                 </p>
             </div>
         </div>
