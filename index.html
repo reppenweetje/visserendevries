@@ -83,16 +83,21 @@
             text-align: right;
             line-height: 1.6;
         }
+        .header-right-group {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
         .dossier-link {
             display: inline-block;
             background: #1a2744;
             color: #fff !important;
             font-size: 11px;
             font-weight: 600;
-            padding: 5px 14px;
+            padding: 8px 18px;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            margin-bottom: 6px;
+            white-space: nowrap;
         }
         .dossier-link:hover { background: #8b7340; color: #fff !important; }
         .header-contact a { color: #1a2744; }
@@ -448,6 +453,7 @@
             .hero h1 { font-size: 26px; }
             .hero::before { display: none; }
             .header-contact { display: none; }
+            .header-right-group { gap: 0; }
             .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -513,10 +519,12 @@
                     <span>Advocaten N.V.</span>
                 </div>
             </a>
-            <div class="header-contact">
+            <div class="header-right-group">
+                <div class="header-contact">
+                    <strong>+31 (0)20 549 23 10</strong><br>
+                    <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
+                </div>
                 <a href="verklaring-onthouding/" class="dossier-link">Mijn dossier</a>
-                <strong>+31 (0)20 549 23 10</strong><br>
-                <a href="mailto:info@visserendevries.nl">info@visserendevries.nl</a>
             </div>
         </div>
     </div>
