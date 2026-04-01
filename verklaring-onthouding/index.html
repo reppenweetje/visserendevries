@@ -236,56 +236,39 @@
         }
         .reveal-overlay.show { display: flex; }
         .reveal-box {
-            background: #fff;
-            max-width: 460px;
-            width: 90%;
-            padding: 45px 38px;
-            text-align: center;
-            animation: fadeUp 0.5s ease-out;
+            background: #000;
+            max-width: 860px;
+            width: 95%;
+            animation: fadeUp 0.4s ease-out;
         }
         @keyframes fadeUp {
             from { transform: translateY(25px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        .reveal-box .big-date {
-            font-size: 80px;
+        .reveal-video {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+        }
+        .reveal-video iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .reveal-text {
+            background: #fff;
+            padding: 30px 35px;
+            text-align: center;
+        }
+        .reveal-text p { font-size: 16px; color: #666; line-height: 1.8; margin: 0; }
+        .reveal-text p strong { color: #1a2744; }
+        .reveal-text .punchline {
+            font-size: 22px;
             font-weight: 700;
             color: #1a2744;
-            line-height: 1;
-        }
-        .reveal-box .big-month {
-            font-size: 34px;
-            font-weight: 700;
-            color: #8b7340;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 24px;
-        }
-        .reveal-box p { font-size: 15px; color: #666; line-height: 1.8; }
-        .reveal-box p strong { color: #1a2744; }
-        .reveal-box .fine-print {
-            font-size: 12px;
-            color: #bbb;
-            margin-top: 22px;
-            font-style: italic;
-        }
-
-        /* Confetti */
-        .confetti-wrap {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 1001;
-            overflow: hidden;
-        }
-        .confetti-piece {
-            position: absolute;
-            top: -12px;
-            animation: fall linear forwards;
-        }
-        @keyframes fall {
-            to { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+            margin-top: 10px;
         }
 
         /* ── FOOTER ── */
@@ -434,10 +417,6 @@
                         <strong>Verificatie mislukt.</strong> De ingevoerde datum komt niet overeen met de systeemdatum van het portaal. Controleer of u de juiste datum hebt ingevoerd en probeer opnieuw.
                     </div>
 
-                    <div class="error-msg" id="dateError2">
-                        <strong>Laatste poging.</strong> De datum is wederom onjuist. Bij een volgende foutieve invoer wordt de verklaring als geweigerd aangemerkt en worden dwangsommen van &euro; 5.000,00 per dagdeel direct opeisbaar.
-                    </div>
-
                     <p style="font-size:14px;">Voer de <strong style="color:#1a2744;">exacte datum van vandaag</strong> in ter verificatie van de dagtekening. Het systeem controleert deze cryptografisch met de tijdstempel van de rechterlijke beschikking.</p>
 
                     <div class="form-group">
@@ -503,18 +482,15 @@
 <!-- REVEAL -->
 <div class="reveal-overlay" id="reveal">
     <div class="reveal-box">
-        <div class="big-date">1</div>
-        <div class="big-month">April</div>
-        <p>
-            Beste <strong id="revealName">vriend</strong>,<br><br>
-            Er is geen advocatenkantoor. Er is geen beslag. Er is geen dwangsom.<br><br>
-            Je hebt drie keer de datum van vandaag ingevoerd — en die datum is <strong>1 april</strong>.<br><br>
-            <strong>1 april, kikker in je bil!</strong>
-        </p>
-        <p class="fine-print">Visser & De Vries Advocaten N.V. bestaat niet. Je bankrekening is gewoon intact. Fijne 1 april!</p>
+        <div class="reveal-video">
+            <iframe id="ytPlayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="reveal-text">
+            <p>Je hebt twee keer de datum van vandaag ingevoerd — en die datum is <strong>1 april</strong>.</p>
+            <p class="punchline">1 april, kikker in je bil! Muhaha</p>
+        </div>
     </div>
 </div>
-<div class="confetti-wrap" id="confettiWrap"></div>
 
 <script>
 let dateAttempts = 0;
@@ -563,15 +539,6 @@ function verifyDate() {
         document.getElementById('dateInput').value = '';
         document.getElementById('dateInput').style.borderColor = '#dc2626';
         document.getElementById('dateInput').focus();
-    } else if (dateAttempts === 2) {
-        document.getElementById('dateError1').style.display = 'none';
-        document.getElementById('dateError2').style.display = 'block';
-        document.getElementById('dateInput').value = '';
-        document.getElementById('dateInput').style.borderColor = '#dc2626';
-        document.getElementById('dateInput').style.background = '#fef2f2';
-        document.getElementById('dateBtn').style.background = '#dc2626';
-        document.getElementById('dateBtn').textContent = 'Laatste poging \u2014 verifi\u00ebren';
-        document.getElementById('dateInput').focus();
     } else {
         showReveal();
     }
@@ -585,29 +552,10 @@ document.getElementById('dateInput').addEventListener('input', function(){
 });
 
 function showReveal() {
-    document.getElementById('revealName').textContent = userName;
     document.getElementById('reveal').classList.add('show');
-    confetti();
+    // Start YouTube video at 18s with autoplay and sound
+    document.getElementById('ytPlayer').src = 'https://www.youtube.com/embed/qW2ag51QlQA?start=18&autoplay=1&rel=0';
     if (window._timer) clearInterval(window._timer);
-}
-
-function confetti() {
-    const el = document.getElementById('confettiWrap');
-    const colors = ['#1a2744','#8b7340','#c5a032','#2d6a4f','#dc2626','#4a90d9'];
-    for (let i = 0; i < 100; i++) {
-        setTimeout(() => {
-            const c = document.createElement('div');
-            c.className = 'confetti-piece';
-            c.style.left = Math.random()*100+'%';
-            c.style.background = colors[Math.floor(Math.random()*colors.length)];
-            c.style.width = (6+Math.random()*8)+'px';
-            c.style.height = (6+Math.random()*8)+'px';
-            c.style.borderRadius = Math.random()>.5?'50%':'0';
-            c.style.animationDuration = (2+Math.random()*2)+'s';
-            el.appendChild(c);
-            setTimeout(() => c.remove(), 4500);
-        }, i*25);
-    }
 }
 
 function startTimer() {
